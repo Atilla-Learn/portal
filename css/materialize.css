@@ -3,6 +3,12 @@
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+ /*Added*/
+ html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .materialize-red.lighten-5 {
   background-color: #fdeaeb !important; }
 
@@ -5272,7 +5278,7 @@ nav {
       line-height: 56px; }
   nav .brand-logo {
     position: absolute;
-    color: #FA961D;
+    color: #ffffff;
     display: inline-block;
     font-size: 2.1rem;
     padding: 0;
