@@ -17,7 +17,13 @@
           <div class="nav-wrapper grey darken-3">
             <div class="container">
             <a href="index.html" class="brand-logo flow-text"><span class="yellow-text text-darken-2">>~/</span>Learn</a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a class="flow-text" href="formations.html">Formations</a></li>
+                <li><a class="flow-text" href="talks.html">Talks</a></li>
+                <li><a class="flow-text" href="conferences.html">Conférences</a></li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
                 <li><a class="flow-text" href="formations.html">Formations</a></li>
                 <li><a class="flow-text" href="talks.html">Talks</a></li>
                 <li><a class="flow-text" href="conferences.html">Conférences</a></li>
@@ -49,11 +55,11 @@
             </div>
         </div>
         <div class="row">
+          <div class="col s10 container offset-s1">
+            <h3 class="yellow-text text-darken-3">Formations</h3>
+          </div>
           <div class="col s5 offset-s1 container">
             <br>
-            <header>
-              <h3 class="yellow-text text-darken-3">Formations</h3>
-            </header>
             <p class="flow-text" align="justify">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
@@ -68,12 +74,9 @@
           </div>
         </div>
         <!-- <div class="container divider"></div> -->
-        <p style="padding: 1px 0;"></p>
-        <div class="row grey darken-2">
-          <div class="col s12 grey darken-3">
-            <header class="col 5 offset-s1">
-              <h3 class="white-text">Talks</h3>
-            </header>
+        <div class="row grey darken-2" style="padding-top:20px;">
+          <div class="col s10 container offset-s1">
+            <h3 class="white-text">Talks</h3>
           </div>
           <div class="col s6 center">
             <img src = "img/prompt copy.png" class="responsive-img" width="90%">
@@ -87,12 +90,11 @@
           </div>
         </div>
         <p style="padding: 1px 0;"></p>
-        <!-- <div class="container divider"></div> -->
         <div class="row">
+          <div class="col s10 container offset-s1">
+            <h3 class="yellow-text text-darken-3">Conférences</h3>
+          </div>
           <div class="col s5 offset-s1">
-            <header>
-              <h3 class="yellow-text text-darken-3">Conférences</h3>
-            </header>
             <p class="flow-text valign-wrapper" align="justify">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
@@ -108,35 +110,36 @@
         </div>
         <p style="padding: 1px 0;"></p>
     <script type="text/javascript">
+         $(".button-collapse").sideNav();
     </script>
+    <footer class="page-footer grey darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Learn Atilla</h5>
+            <p class="grey-text text-lighten-4">Site proposé par l'association Atilla.</p>
+            <!-- Easter go here -->
+
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="formations.html">Formations</a></li>
+              <li><a class="grey-text text-lighten-3" href="talks.html">Talks</a></li>
+              <li><a class="grey-text text-lighten-3" href="conferences.html">Conférences</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="divider white container"></div>
+        <div class="container">
+        © 2015 Atilla
+        <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+        </div>
+      </div>
+    </footer>
   </body>
 
-  <footer class="page-footer grey darken-3">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Learn Atilla</h5>
-          <p class="grey-text text-lighten-4">Site proposé par l'association Atilla.</p>
-          <!-- Easter go here -->
-          
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="formations.html">Formations</a></li>
-            <li><a class="grey-text text-lighten-3" href="talks.html">Talks</a></li>
-            <li><a class="grey-text text-lighten-3" href="conferences.html">Conférences</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="divider white container"></div>
-      <div class="container">
-      © 2015 Atilla
-      <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
-      </div>
-    </div>
-  </footer>
 
 </html>
