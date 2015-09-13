@@ -15,8 +15,14 @@
     <nav>
       <div class="nav-wrapper grey darken-3">
         <div class="container">
-          <a href="index.html" class="brand-logo flow-text"><span class="yellow-text text-darken-2">>~/</span>Learn</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a href="index.html" class="brand-logo flow-text"><span class="yellow-text text-darken-2">>~/</span>Learn</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a class="flow-text" href="formations.html">Formations</a></li>
+            <li><a class="flow-text" href="talks.html">Talks</a></li>
+            <li><a class="flow-text" href="conferences.html">Conférences</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
             <li><a class="flow-text" href="formations.html">Formations</a></li>
             <li><a class="flow-text" href="talks.html">Talks</a></li>
             <li><a class="flow-text" href="conferences.html">Conférences</a></li>
@@ -69,8 +75,6 @@
       </a>
       <!--  -->
     </div>
-  </body>
-
   <footer class="page-footer grey darken-3">
     <div class="container">
       <div class="row">
@@ -97,5 +101,10 @@
       </div>
     </div>
   </footer>
+  <script type="text/javascript">
+       $(".button-collapse").sideNav();
+  </script>
+  </body>
+
 
 </html>
