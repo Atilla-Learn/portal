@@ -1,0 +1,19 @@
+type: conference
+title: Let it code
+date: 16/09/2015
+image: affiche-letitcode.jpeg
+short: Comment bien débuter en programmation ? C'est la question à laquelle nous allons tenter de répondre durant cette conférence !
+replay_id: wQR3MHLkAUo
+authors:
+  - flavr
+  - antoinegirard
+description: La programmation n'est pas récente et prends ressources dans l'histoire. Ainsi vous pourrez découvrir dans quel contexte la programmation a été inventée, et pour quelles raisons. Nous ⁠⁠⁠répondrons également à "Pourquoi faire de la programmation ?" et "Comment commencer ?" tout en adoptant une approche différente de celle abordée en cours à l'EISTI afin de permettre aux gens d'appréhender les enjeux de cette discipline et de la commencer sereinement. Vous découvrirez enfin les expériences personnelles d'Antoine et de Flavien, qu'ils ont accumulée en travaillant sur de multiples projets, aux objectifs variés, en solo ou en équipe.
+links:
+  - type: video
+    text: Les neuro-révolutionnaires
+    link: https://youtu.be/tw1lEOUWmN8
+    source: Youtube
+    author: USI Events
+slides:
+  link: http://alo
+  git: http://alo.git

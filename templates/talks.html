@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <main>
+    <div class="container">
+      <h3 class="yellow-text text-darken-2">{{ landpage_title }}</h3>
+      <p class="flow-text">
+        Vous trouverez ici toutes les talks. Et ça c'est cool.
+      </p>
+      {% for slug, entry in entries.items() %}
+        <a href="{{slug}}.html">
+          <div class="card-panel row valign-wrapper z-depth-1 hoverable black-text">
+            <div class="col s4 valign">
+              <img src="img/{{ entry.image }}" class="responsive-img"/>
+            </div>
+            <div class="col s8 valign">
+              <h2>{{ entry.title }}</h2>
+              <h4><i class="fa fa-calendar-o"></i> {{ entry.date }}</h4>
+              <p>{{ entry.short }}</p>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </main>
+
+{% endblock %}
+
+</html>
