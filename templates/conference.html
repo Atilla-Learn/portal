@@ -22,40 +22,44 @@
             {{ entry.description }}
           </span>
         </div>
-        <div class="card-panel">
-          <span class="black-text">
-            <h4>A voir</h4>
-            <ul class="collection">
-              {% for link in entry.links %}
-                <li class="collection-item avatar">
+        {% if entry.links %}
+          <div class="card-panel">
+            <span class="black-text">
+              <h4>A voir</h4>
+              <ul class="collection">
+                {% for link in entry.links %}
+                  <li class="collection-item avatar">
 
-                  {% if link.type == 'video' %}
-                    <i class="material-icons circle">play_arrow</i>
-                  {% elif link.type == 'http' %}
-                    <i class="material-icons circle red">http</i>
-                  {% elif link.type == 'book' %}
-                    <i class="material-icons circle green">library_books</i>
-                  {% endif %}
+                    {% if link.type == 'video' %}
+                      <i class="material-icons circle">play_arrow</i>
+                    {% elif link.type == 'http' %}
+                      <i class="material-icons circle red">http</i>
+                    {% elif link.type == 'book' %}
+                      <i class="material-icons circle green">library_books</i>
+                    {% endif %}
 
-                  <span class="title">{{ link.text }}</span>
-                  <p>{{ link.source }}<br />{{ link.author }}</p>
-                  <a href="{{ link.link }}" class="secondary-content" target="_blank">
-                    <i class="material-icons">send</i></a>
-                </li>
-              {% endfor %}
-            </ul>
-          </span>
-        </div>
+                    <span class="title">{{ link.text }}</span>
+                    <p>{{ link.source }}<br />{{ link.author }}</p>
+                    <a href="{{ link.link }}" class="secondary-content" target="_blank">
+                      <i class="material-icons">send</i></a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </span>
+          </div>
+        {% endif %}
       </div>
       <div class="col l5 s12">
         <div class="card grey darken-3">
           <div class="card-content white-text">
             <span class="flow-text"><i class="fa fa-calendar-o"></i>  {{ entry.date }}</span>
           </div>
-          <div class="card-action">
-            <a href="{{ entry.slides.link }}" class="waves-effect yellow darken-1 waves-dark btn black-text text-darken-5">Voir les slides</a>
-            <a href="{{ entry.slides.git }}">(source)</a>
-          </div>
+          {% if entry.slides %}
+            <div class="card-action">
+              <a href="{{ entry.slides.link }}" class="waves-effect yellow darken-1 waves-dark btn black-text text-darken-5">Voir les slides</a>
+              <a href="{{ entry.slides.git }}">(source)</a>
+            </div>
+          {% endif %}
         </div>
         <div class="row">
           {% for author_nick, author in authors.items() %}
