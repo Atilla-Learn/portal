@@ -14,6 +14,31 @@ links:
     link: https://youtu.be/tw1lEOUWmN8
     source: Youtube
     author: USI Events
+  - type: http
+    text: VisuAlgo
+    link: http://visualgo.net
+    source: VisuAlgo
+    author: NUS Centre for Development of Teaching and Learning
+  - type: http
+    text: Introduction to Programming in Python
+    link: http://introcs.cs.princeton.edu/python/home/
+    source: University of Princeton
+    author: Robert Sedgewick, Kevin Wayne, and Robert Dondero
+  - type: http
+    text: Introduction to Programming in Java
+    link: http://introcs.cs.princeton.edu/java/home/
+    source: University of Princeton
+    author: Robert Sedgewick and Kevin Wayne
+  - type: http
+    text: Computer Science 101
+    link: https://www.coursera.org/course/cs101
+    source: Coursera
+    author: Nick Parlante - Stanford
+  - type: book
+    text: Introduction to Algorithms
+    link: https://en.wikipedia.org/wiki/Introduction_to_Algorithms
+    source: Wikipedia
+    author: Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein
 slides:
-  link: http://alo
-  git: http://alo.git
+  link: http://slides.atilla.org/let-it-code-2015/
+  git: http://gitlab.etude.eisti.fr/learn-atilla/let-it-code-2015.git
