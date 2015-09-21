@@ -86,11 +86,7 @@ class AtillaLearn:
         self.render_landpage('talk', 'talks.html', 'Talks')
         for slug, entry in self.items.items():
             self.render_item(slug, entry)
-        
 
 if __name__ == '__main__':
     a = AtillaLearn()
     a.render()
-    
-
-
