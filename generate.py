@@ -1,6 +1,5 @@
 import os
-import calendar
-import time
+import datetime
 import subprocess
 
 from jinja2 import Environment, PackageLoader
@@ -16,7 +15,7 @@ class AtillaLearn:
         'talk': 'talk.html',
         'training': 'training.html'
     }
-    
+
     def __init__(self):
         # Jinja stuff
         self.env = Environment(loader=PackageLoader('generate', 'templates'))
@@ -27,10 +26,10 @@ class AtillaLearn:
 
         self.collect_authors()
         self.collect_items()
-        
+
         # Nerd stuff
         self.nerd_dict = {
-            'gen_time': calendar.timegm(time.gmtime()),
+            'gen_time': datetime.datetime.now(),
             'git_sha1': subprocess.check_output(
                 ['git', 'rev-parse', 'HEAD'],
                 universal_newlines=True

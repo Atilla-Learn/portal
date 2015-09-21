@@ -28,7 +28,7 @@
             <ul class="collection">
               {% for link in entry.links %}
                 <li class="collection-item avatar">
-                  
+
                   {% if link.type == 'video' %}
                     <i class="material-icons circle">play_arrow</i>
                   {% elif link.type == 'http' %}
@@ -36,10 +36,10 @@
                   {% elif link.type == 'book' %}
                     <i class="material-icons circle green">library_books</i>
                   {% endif %}
-                  
+
                   <span class="title">{{ link.text }}</span>
                   <p>{{ link.source }}<br />{{ link.author }}</p>
-                  <a href="{{ link.link }}" class="secondary-content">
+                  <a href="{{ link.link }}" class="secondary-content" target="_blank">
                     <i class="material-icons">send</i></a>
                 </li>
               {% endfor %}
