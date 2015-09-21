@@ -5,7 +5,11 @@
     <div class="container">
       <h3 class="yellow-text text-darken-2">{{ landpage_title }}</h3>
       <p class="flow-text">
-        Vous trouverez ici toutes les talks. Et ça c'est cool.
+        {% if entries %}
+          Vous trouverez ici toutes les talks. Et ça c'est cool.
+        {% else %}
+          Il n'y a aucun talk pour le moment.
+        {% endif %}
       </p>
       {% for slug, entry in entries.items() %}
         <a href="{{slug}}.html">
