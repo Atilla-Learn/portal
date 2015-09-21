@@ -54,7 +54,7 @@
           <div class="card-content white-text">
             <span class="flow-text"><i class="fa fa-calendar-o"></i>  {{ entry.date }}</span>
           </div>
-          {% if 'slides' in entry %}
+          {% if entry.slides %}
             <div class="card-action">
               <a href="{{ entry.slides.link }}" class="waves-effect yellow darken-1 waves-dark btn black-text text-darken-5">Voir les slides</a>
               <a href="{{ entry.slides.git }}">(source)</a>
