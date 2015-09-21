@@ -52,8 +52,8 @@
         <div class="row">
           <div class="col l6 s12">
             <h5 class="white-text">Learn Atilla</h5>
-            <p class="grey-text text-lighten-4">Site proposé par l'association Atilla.</p>
-            <p class="grey-text text-lighten-4">Généré à {{ gen_time }},
+            <p class="grey-text text-lighten-4">Site proposé par l'association <a href="http://atilla.org" class="atilla">Atilla</a>.</p>
+            <p class="grey-text text-lighten-4">Généré le {{ gen_time.strftime("%d/%m/%Y") }} à {{ gen_time.strftime("%H:%M") }},
               révision <a href="http://gitlab.etude.eisti.fr/learn-atilla/learn-atilla-org/commit/{{ git_sha1 }}">{{ git_sha1 }}</a>.</p>
             <a href="https://twitter.com/cy106"><img src="img/twitter.png"></a>
             <a href="https://www.facebook.com/atilla.org/"><img src="img/fb.png"></a>
