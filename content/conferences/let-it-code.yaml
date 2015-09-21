@@ -40,5 +40,5 @@ links:
     source: Wikipedia
     author: Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein
 slides:
-  link: http://alo
-  git: http://alo.git
+  link: http://slides.atilla.org/let-it-code-2015/
+  git: http://gitlab.etude.eisti.fr/learn-atilla/let-it-code-2015.git
