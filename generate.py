@@ -11,6 +11,11 @@ class AtillaLearn:
     output_dir = 'web/'
     authors_files = 'content/authors/'
     items_dirs = map(lambda d: 'content/' + d, ['conferences', 'talks', 'trainings'])
+    templates_map = {
+        'conference': 'conference.html',
+        'talk': 'talk.html',
+        'training': 'training.html'
+    }
     
     def __init__(self):
         # Jinja stuff
@@ -61,12 +66,9 @@ class AtillaLearn:
             f.write(template.render(landpage_title=title, title=title, entries=entries, **self.nerd_dict))
 
     def render_item(self, slug, entry):
-        if entry['type'] == 'conference':
-            tpl = 'conference.html'
-        elif entry['type'] == 'talk':
-            tpl = 'talk.html'
-        else:
-            tpl = 'training.html'
+        if entry['type'] not in self.templates_map:
+            raise ValueError('{} is not a valid item type.'.format(entry['type']))
+        tpl = self.templates_map[entry['type']]
 
         authors = {
             k: v for k, v in self.authors.items()
