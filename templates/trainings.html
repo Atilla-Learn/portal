@@ -5,7 +5,19 @@
     <div class="container">
       <h3 class="yellow-text text-darken-2">{{ landpage_title }}</h3>
       <p class="flow-text">
-        Vous trouverez ici toutes les formations. Et ça c'est cool.
+        {% if entries %}
+          Vous trouverez ici toutes les formations. Et ça c'est cool.
+        {% else %}
+          <div class="row">
+            <div class="col s12 offset-m2 m8">
+              <div class="card-panel grey lighten-2">
+                <div class="">
+                  <h4 class="center-align"><i class="fa fa-times-circle"></i>  Il y a pas de formation pour le moment</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
       </p>
       {% for slug, entry in entries.items() %}
         <a href="{{slug}}.html">
