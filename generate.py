@@ -39,20 +39,20 @@ class AtillaLearn:
     def collect_authors(self):
         for authorfile in os.listdir(self.authors_files):
             if authorfile.endswith('.yaml'):
-                with open(self.authors_files + authorfile) as f:
+                with open(os.path.join(self.authors_files, authorfile)) as f:
                     self.authors[authorfile.split('.')[0]] = yaml.load(f.read())
 
     def collect_items(self):
         for dir_ in self.items_dirs:
             for item_file in os.listdir(dir_):
                 if item_file.endswith('.yaml'):
-                    with open(dir_ + '/' + item_file) as f:
+                    with open(os.path.join(dir_, item_file)) as f:
                         d = yaml.load(f.read())
                         self.items[slugify(item_file.split('.')[0])] = d
 
     def render_home(self):
         template = self.env.get_template('index.html')
-        with open(self.output_dir + 'index.html', 'w') as f:
+        with open(os.path.join(self.output_dir, 'index.html'), 'w') as f:
             f.write(template.render(title='Atilla Learn', **self.nerd_dict))
 
     def render_landpage(self, type_, filename, title):
@@ -61,7 +61,7 @@ class AtillaLearn:
             if v['type'] == type_
         }
         template = self.env.get_template(filename)
-        with open(self.output_dir + filename, 'w') as f:
+        with open(os.path.join(self.output_dir, filename), 'w') as f:
             f.write(template.render(landpage_title=title, title=title, entries=entries, **self.nerd_dict))
 
     def render_item(self, slug, entry):
@@ -76,8 +76,8 @@ class AtillaLearn:
 	
         title = entry['title']
         template = self.env.get_template(tpl)
-        with open(self.output_dir + slug + '.html', 'w') as f:
-            f.write(template.render(title=title, entry=entry, authors=authors, **self.nerd_dict))
+        with open(os.path.join(self.output_dir, slug + '.html'), 'w') as f:
+            f.write(template.render(entry=entry, authors=authors, **self.nerd_dict))
 
     def render(self):
         self.render_home()
