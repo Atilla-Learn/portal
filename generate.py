@@ -34,15 +34,17 @@ class AtillaLearn:
 
     def collect_authors(self):
         for authorfile in os.listdir(self.authors_files):
-            with open(self.authors_files + authorfile) as f:
-                self.authors[authorfile.split('.')[0]] = yaml.load(f.read())
+            if authorfile.endswith('.yaml'):
+                with open(self.authors_files + authorfile) as f:
+                    self.authors[authorfile.split('.')[0]] = yaml.load(f.read())
 
     def collect_items(self):
         for dir_ in self.items_dirs:
             for item_file in os.listdir(dir_):
-                with open(dir_ + '/' + item_file) as f:
-                    d = yaml.load(f.read())
-                    self.items[slugify(item_file.split('.')[0])] = d
+                if item_file.endswith('.yaml'):
+                    with open(dir_ + '/' + item_file) as f:
+                        d = yaml.load(f.read())
+                        self.items[slugify(item_file.split('.')[0])] = d
 
     def render_home(self):
         template = self.env.get_template('index.html')
