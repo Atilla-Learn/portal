@@ -2,7 +2,7 @@
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: local('Material Icons'), local('MaterialIcons-Regular'), url(../font/material-design-icons/Material-Design-Icons.woff2) format('woff2');
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(../font/Material-Icons.ttf) format('truetype');
 }
 
 .material-icons {
@@ -15,6 +15,7 @@
   text-transform: none;
   display: inline-block;
   word-wrap: normal;
-  -webkit-font-feature-settings: 'liga';
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+
