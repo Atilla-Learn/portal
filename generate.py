@@ -7,9 +7,9 @@ from slugify import slugify
 import yaml
 
 class AtillaLearn:
-    output_dir = 'web/'
-    authors_files = 'content/authors/'
-    items_dirs = map(lambda d: 'content/' + d, ['conferences', 'talks', 'trainings'])
+    output_dir = 'web'
+    authors_dir = 'content/authors'
+    items_dirs = map(lambda d: os.path.join('content', d), ['conferences', 'talks', 'trainings'])
     templates_map = {
         'conference': 'conference.html',
         'talk': 'talk.html',
@@ -37,9 +37,9 @@ class AtillaLearn:
         }
 
     def collect_authors(self):
-        for authorfile in os.listdir(self.authors_files):
+        for authorfile in os.listdir(self.authors_dir):
             if authorfile.endswith('.yaml'):
-                with open(os.path.join(self.authors_files, authorfile)) as f:
+                with open(os.path.join(self.authors_dir, authorfile)) as f:
                     self.authors[authorfile.split('.')[0]] = yaml.load(f.read())
 
     def collect_items(self):
