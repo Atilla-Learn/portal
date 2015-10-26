@@ -1,0 +1,13 @@
+type: conference
+title: Linux
+date: 16/09/2015
+image: affiche-linux.jpg
+short: Vous ne connaissez pas encore le fabuleux univers de Linux ? Venez découvrir les petites dessous de Linux et plein de choses en plus. Et si vous êtes curieux, regardez nous soulever le capot !
+replay_id: CsK8QnoQxGc 
+authors:
+  - thooms
+  - valz
+description: Vous ne connaissez pas encore le fabuleux univers de Linux ? Vous pourrez alors apprendre ce qu'est Linux, à quoi ça sert et qui l'utilise. Bien entendu nous ne pouvons pas aborder Linux sans parler de logiciel Open Source et autres joyeusetés. Vous ne savez pas ce que c'est ? Ne vous inquiétez pas on va tout vous expliquer. Vous êtes curieux ? Vous découvrirez ce qu'il y a sous le capot ainsi que des aspects avancés de Linux.
+slides:
+  link: http://slides.atilla.org/linux
+  git: http://gitlab.etude.eisti.fr/learn-atilla/conf-linux
