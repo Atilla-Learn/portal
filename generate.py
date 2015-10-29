@@ -77,7 +77,7 @@ class AtillaLearn:
         title = entry['title']
         template = self.env.get_template(tpl)
         with open(os.path.join(self.output_dir, slug + '.html'), 'w') as f:
-            f.write(template.render(entry=entry, authors=authors, **self.nerd_dict))
+            f.write(template.render(title=title, entry=entry, authors=authors, **self.nerd_dict))
 
     def render(self):
         self.render_home()
