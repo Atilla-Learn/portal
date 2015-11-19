@@ -1,0 +1,23 @@
+type: training
+title: Python
+date: 19/11/2015
+image: affiche-python.jpg
+short: Formation au langage de programmation Python, exploration de plusieurs de ses facettes
+authors:
+  - choclate
+  - tiaosheng
+description: Python, on trouve ça cool, donc on vous montre comment ça marche. Après avoir digéré une grosse partie théorique, vous pourrez vous lancer dans la résolution du TP qui se trouve à la fin des slides !
+links:
+  - type: http
+    text: Dive into Python3
+    link: http://www.diveintopython3.net/
+    source: Dive into Python
+    author: Mark Pilgrim
+  - type: http
+    text: Introduction to Programming in Python
+    link: http://introcs.cs.princeton.edu/python/home/
+    source: University of Princeton
+    author: Robert Sedgewick, Kevin Wayne, and Robert Dondero
+slides:
+  link: http://slides.atilla.org/python-2015/
+  git: https://github.com/Atilla106/formation-python-2015
