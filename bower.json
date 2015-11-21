@@ -1,0 +1,14 @@
+{
+  "name": "learn.atilla.org",
+  "homepage": "https://github.com/Atilla106/learn",
+  "authors": [
+    "Atilla <atilla@atilla.org>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "dependencies": {
+    "Materialize": "materialize#~0.97.3"
+  }
+}
