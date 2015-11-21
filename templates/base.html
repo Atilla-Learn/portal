@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css" charset="utf-8">
 
-    <title>{{ title }}</title>
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}Learn est la plateforme d'appretissage de Atilla. Retrouvez nos talks, formations et conférences.{% endblock %}">
+
   </head>
 
   <body>
