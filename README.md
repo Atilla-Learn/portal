@@ -5,7 +5,7 @@ Python-generated static website, with `materialize.css` design.
 # How to get a working instance
 
 * Clone the repo
-* `virtualenv --python=python3 venv`
+* `pyvenv venv`
 * `source venv/bin/activate`
 * `pip install -r requirements.txt`
 * `python generate.py`
