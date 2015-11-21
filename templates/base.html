@@ -8,7 +8,7 @@
 
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="vendor/Materialize/dist/css/materialize.min.css" media="screen,projection"/>
-    <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css" charset="utf-8">
 
     <title>{{ title }}</title>
@@ -80,11 +80,12 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="vendor/Materialize/dist/js/materialize.min.js"></script>
 
-    <script src="js/scroll.js"></script>
+    {% block script %}{% endblock %}
 
     <script type="text/javascript">
          $(".button-collapse").sideNav();
     </script>
+
 
   </body>
 </html>

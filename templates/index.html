@@ -81,3 +81,16 @@
   <p style="padding: 1px 0;"></p>
 </main>
 {% endblock %}
+
+{% block script %}
+<script>
+$(document).ready(function(){
+  $('#topbutton').click(function(){
+    $('html, body').animate({
+           scrollTop: 790
+       }, 800);
+  });
+  $('ul.tabs').tabs();
+});
+</script>
+{% endblock %}
