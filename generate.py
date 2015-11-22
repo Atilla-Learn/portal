@@ -1,6 +1,7 @@
 import os
 import datetime
 import subprocess
+import time
 
 from jinja2 import Environment, PackageLoader
 from slugify import slugify
@@ -35,6 +36,8 @@ class AtillaLearn:
                 universal_newlines=True
             ).strip()
         }
+
+        self.domain = 'http://learn.atilla.org'
 
     def collect_authors(self):
         for authorfile in os.listdir(self.authors_dir):
@@ -79,6 +82,30 @@ class AtillaLearn:
         with open(os.path.join(self.output_dir, slug + '.html'), 'w') as f:
             f.write(template.render(title=title, entry=entry, authors=authors, **self.nerd_dict))
 
+    def render_sitemap(self):
+        datestr = time.strftime('%Y-%m-%d', time.gmtime())
+
+        pages = []
+        pages.append({'url': self.domain, 'lastmod': datestr})
+        pages.extend([
+            {
+                'url': self.domain + '/{}.html'.format(page),
+                'lastmod': datestr
+            }
+            for page in ('conferences', 'trainings', 'talks')
+        ])
+        pages.extend([
+            {
+                'url': self.domain + '/{}.html'.format(slug),
+                'lastmod': datestr
+            }
+            for slug in self.items
+        ])
+        template = self.env.get_template('sitemap.xml')
+        with open(os.path.join(self.output_dir, 'sitemap.xml'), 'w') as f:
+            f.write(template.render(pages=pages))
+
+
     def render(self):
         self.render_home()
         self.render_landpage('conference', 'conferences.html', 'Conférences')
@@ -86,6 +113,7 @@ class AtillaLearn:
         self.render_landpage('talk', 'talks.html', 'Talks')
         for slug, entry in self.items.items():
             self.render_item(slug, entry)
+        self.render_sitemap()
 
 if __name__ == '__main__':
     a = AtillaLearn()
