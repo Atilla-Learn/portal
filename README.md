@@ -9,6 +9,7 @@ Python-generated static website, with `materialize.css` design.
 * `source venv/bin/activate`
 * `pip install -r requirements.txt`
 * `python generate.py`
+* `bower install` 
 
 # Structure of the repo
 
