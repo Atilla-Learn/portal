@@ -6,8 +6,23 @@ body {
 
 main {
   flex: 1 0 auto;
+  padding: 30px 0;
+}
+
+main.index {
+  padding: 0;
 }
 
 .atilla {
   color: #F7A325;
+}
+
+.date {
+  font-size: 24px;
+  color: grey;
+  text-align: right;
+}
+
+.no-padding {
+  padding: 0;
 }

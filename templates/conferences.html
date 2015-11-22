@@ -14,24 +14,18 @@ Liste des conférences proposée par Atilla
         {% if entries %}
           Vous trouverez ici toutes les conférences. Et ça c'est cool.
         {% else %}
-          <div class="row">
-            <div class="col s12 offset-m2 m8">
-              <div class="card-panel grey lighten-2">
-                <h4 class="center-align"><i class="fa fa-times-circle"></i>  Il y a pas de conférences pour le moment</h4>
-              </div>
-            </div>
-          </div>
+          {% include 'includes/empty.html' %}
         {% endif %}
       </p>
       {% for slug, entry in entries.items() %}
         <a href="{{slug}}.html">
-          <div class="card-panel row valign-wrapper z-depth-1 hoverable black-text">
-            <div class="col s4 valign">
+          <div class="card-panel no-padding row z-depth-1 hoverable black-text">
+            <div class="col s4 no-padding">
               <img src="img/{{ entry.image }}" class="responsive-img"/>
             </div>
-            <div class="col s8 valign">
+            <div class="col s8">
+              <h4 class="date"><i class="fa fa-calendar-o"></i> {{ entry.date }}</h4>
               <h2>{{ entry.title }}</h2>
-              <h4><i class="fa fa-calendar-o"></i> {{ entry.date }}</h4>
               <p>{{ entry.short }}</p>
             </div>
           </div>
