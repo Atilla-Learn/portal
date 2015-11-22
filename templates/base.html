@@ -19,62 +19,67 @@
   <body>
     {# Header #}
     <header>
-      <nav>
-        <div class="nav-wrapper blue-grey darken-3">
-          <div class="container">
-            <a href="index.html" class="brand-logo flow-text"><span class="yellow-text text-darken-2">>~/</span>Learn</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a class="flow-text" href="trainings.html">Formations</a></li>
-              <li><a class="flow-text" href="talks.html">Talks</a></li>
-              <li><a class="flow-text" href="conferences.html">Conférences</a></li>
-            </ul>
+        <div class="side-nav fixed" id="mobile-demo">
+          <a href="index.html" class="brand-logo flow-text blue-grey darken-3">
+            <span class="yellow-text text-darken-2">>~/</span>Learn
+          </a>
 
-            {# Mobile nav #}
-            <ul class="side-nav" id="mobile-demo">
-              <li><a class="flow-text" href="trainings.html">Formations</a></li>
-              <li><a class="flow-text" href="talks.html">Talks</a></li>
-              <li><a class="flow-text" href="conferences.html">Conférences</a></li>
-            </ul>
-          </div>
+          <ul style="width:240px;">
+            <li><a class="flow-text" href="trainings.html">Formations</a></li>
+            <li><a class="flow-text" href="talks.html">Talks</a></li>
+            <li><a class="flow-text" href="conferences.html">Conférences</a></li>
+          </ul>
         </div>
-      </nav>
     </header>
 
     {# Main content #}
+    <main>
+        <nav>
+          <div class="nav-wrapper grey lighten-3">
+            <div class="container">
+              <a href="#" data-activates="mobile-demo" class="button-collapse grey-text"><i class="material-icons">menu</i></a>
+              <a href="#!" class="brand-logo">{% block subtitle %}{% endblock %}</a>
+
+              <div class="right hide-on-small-only" style="padding-top:7px;">
+                <a href="https://twitter.com/cy106" target="_blank"><img height="50" width="50" src="img/twitter.png"></a>
+                <a href="https://www.facebook.com/atilla.org/" target="_blank"><img height="50" width="50" src="img/fb.png"></a>
+                <a href="https://www.youtube.com/channel/UCvhqFFyH0V-6FBhzvuG58Jg" target="_blank"><img height="50" width="50" src="img/youtube.png"></a>
+              </div>
+            </div>
+          </div>
+        </nav>
     {% block content %}
     {% endblock %}
 
     {# Footer #}
-    <footer class="page-footer blue-grey darken-5">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Learn Atilla</h5>
-            <p class="grey-text text-lighten-4">Site proposé par l'association <a href="http://atilla.org" class="atilla">Atilla</a>.</p>
-            <p class="grey-text text-lighten-4">Généré le {{ gen_time.strftime("%d/%m/%Y") }} à {{ gen_time.strftime("%H:%M") }},
-              révision <a href="http://gitlab.etude.eisti.fr/learn-atilla/learn-atilla-org/commit/{{ git_sha1 }}">{{ git_sha1 }}</a>.</p>
-            <a href="https://twitter.com/cy106" target="_blank"><img src="img/twitter.png"></a>
-            <a href="https://www.facebook.com/atilla.org/" target="_blank"><img src="img/fb.png"></a>
-            <a href="https://www.youtube.com/channel/UCvhqFFyH0V-6FBhzvuG58Jg" target="_blank"><img src="img/youtube.png"></a>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Liens</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="trainings.html">Formations</a></li>
-              <li><a class="grey-text text-lighten-3" href="talks.html">Talks</a></li>
-              <li><a class="grey-text text-lighten-3" href="conferences.html">Conférences</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
+      <footer class="page-footer blue-grey darken-5">
         <div class="container">
-        © 2015 Atilla
-        <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Learn Atilla</h5>
+              <p class="grey-text text-lighten-4">Site proposé par l'association <a href="http://atilla.org" class="atilla">Atilla</a>.</p>
+              <p class="grey-text text-lighten-4">Généré le {{ gen_time.strftime("%d/%m/%Y") }} à {{ gen_time.strftime("%H:%M") }},
+                révision <a href="http://gitlab.etude.eisti.fr/learn-atilla/learn-atilla-org/commit/{{ git_sha1 }}">{{ git_sha1 }}</a>.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Liens</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="trainings.html">Formations</a></li>
+                <li><a class="grey-text text-lighten-3" href="talks.html">Talks</a></li>
+                <li><a class="grey-text text-lighten-3" href="conferences.html">Conférences</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </footer>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2015 Atilla
+          <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+          </div>
+        </div>
+      </footer>
+
+    </main>
 
 
     {# Script #}

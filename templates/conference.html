@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %}Conférence {{entry.title}}{% endblock %}
+{% block subtitle %}Conférences > {{entry.title}}{% endblock %}
+
 
 {% block description %}
 {{ entry.short }}
 {% endblock %}
 
 {% block content %}
-<main>
   <div class="container">
     <h3 class="yellow-text text-darken-2">{{ entry.title}}</h3>
     <p class="flow-text">{{ entry.short }}</p>
@@ -82,6 +83,4 @@
       </div>
     </div>
   </div>
-  <br><br>
-</main>
 {% endblock %}

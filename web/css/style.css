@@ -4,23 +4,63 @@ body {
   flex-direction: column;
 }
 
-main {
-  flex: 1 0 auto;
-  padding: 30px 0;
+
+.side-nav.fixed a {
+  font-weight: 800;
 }
 
-main.index {
-  padding: 0;
+main {
+  flex: 1 0 auto;
+  padding: 0px 0;
+  padding-left: 240px;
 }
+
+@media only screen and (max-width: 992px) {
+  main {
+      padding-left: 0;
+  }
+}
+
+.container {
+  max-width: 90%;
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+      width: 80%;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .container {
+      width: 90%;
+  }
+}
+
+.brand-logo {
+  font-size: 30px !important;
+  color: white !important;
+  font-weight: 300 !important;
+}
+
+nav .brand-logo {
+  color: grey !important;
+  font-size: 25px !important;
+}
+
 
 .atilla {
   color: #F7A325;
 }
 
 .date {
-  font-size: 24px;
+  font-size: 20px;
   color: grey;
   text-align: right;
+}
+
+.name {
+  font-size: 30px;
 }
 
 .no-padding {
