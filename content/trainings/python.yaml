@@ -6,7 +6,7 @@ short: Formation au langage de programmation Python, exploration de plusieurs de
 authors:
   - choclate
   - tiaosheng
-description: Python, on trouve ça cool, donc on vous montre comment ça marche. Après avoir digéré une grosse partie théorique, vous pourrez vous lancer dans la résolution du TP qui se trouve à la fin des slides !
+description: Python, on trouve ça cool, donc on vous montre comment ça marche. Après avoir digéré une grosse partie théorique (qui est là pour vous montrer à quel point tout s'écrit facilement !), vous pourrez vous lancer dans la résolution du TP qui se trouve à la fin des slides !
 links:
   - type: http
     text: Dive into Python3
