@@ -73,7 +73,7 @@ class AtillaLearn:
             k: v for k, v in self.authors.items()
             if k in entry['authors']
         }
-	
+
         title = entry['title']
         template = self.env.get_template(tpl)
         with open(os.path.join(self.output_dir, slug + '.html'), 'w') as f:
