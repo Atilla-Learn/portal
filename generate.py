@@ -84,23 +84,14 @@ class AtillaLearn:
 
     def render_sitemap(self):
         datestr = time.strftime('%Y-%m-%d', time.gmtime())
-
-        pages = []
-        pages.append({'url': self.domain, 'lastmod': datestr})
-        pages.extend([
-            {
-                'url': self.domain + '/{}.html'.format(page),
-                'lastmod': datestr
-            }
-            for page in ('conferences', 'trainings', 'talks')
-        ])
-        pages.extend([
-            {
-                'url': self.domain + '/{}.html'.format(slug),
-                'lastmod': datestr
-            }
-            for slug in self.items
-        ])
+        endpoints = [
+            '/{}.html'.format(page)
+            for page in ['conferences', 'trainings', 'talks'] + list(self.items.keys())
+        ]
+        pages = [
+            {'url': self.domain + endpoint, 'lastmod': datestr}
+            for endpoint in endpoints
+        ]
         template = self.env.get_template('sitemap.xml')
         with open(os.path.join(self.output_dir, 'sitemap.xml'), 'w') as f:
             f.write(template.render(pages=pages))
