@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns/website#">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
     <meta name="google-site-verification" content="30rEodAdJUH7y9YsTZI1RyWm3M3Xt2qIuRzfX-OgydU" />
+
+    {# OpenGraph metadata #}
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ meta.url }}" />
+    <meta property="og:image" content="{{ meta.image }}" />
 
     <link rel="icon" href="http://atilla.org/assets/img/favicon.ico">
 

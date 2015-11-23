@@ -7,6 +7,9 @@ from jinja2 import Environment, PackageLoader
 from slugify import slugify
 import yaml
 
+# TODO(thooms): self.build_url(endpoint)
+# TODO(thooms): better template parameters (dict builder)
+
 class AtillaLearn:
     output_dir = 'web'
     authors_dir = 'content/authors'
@@ -38,6 +41,7 @@ class AtillaLearn:
         }
 
         self.domain = 'http://learn.atilla.org'
+        self.default_image = 'http://learn.atilla.org/img/prompt.png'
 
     def collect_authors(self):
         for authorfile in os.listdir(self.authors_dir):
@@ -56,7 +60,11 @@ class AtillaLearn:
     def render_home(self):
         template = self.env.get_template('index.html')
         with open(os.path.join(self.output_dir, 'index.html'), 'w') as f:
-            f.write(template.render(title='Atilla Learn', **self.nerd_dict))
+            f.write(template.render(
+                title='Atilla Learn',
+                meta={'url': self.domain, 'image': self.default_image},
+                **self.nerd_dict
+            ))
 
     def render_landpage(self, type_, filename, title):
         entries = {
@@ -65,7 +73,13 @@ class AtillaLearn:
         }
         template = self.env.get_template(filename)
         with open(os.path.join(self.output_dir, filename), 'w') as f:
-            f.write(template.render(landpage_title=title, title=title, entries=entries, **self.nerd_dict))
+            f.write(template.render(
+                landpage_title=title,
+                title=title,
+                entries=entries,
+                meta={'url': self.domain + '/' + filename, 'image': self.default_image},
+                **self.nerd_dict
+            ))
 
     def render_item(self, slug, entry):
         if entry['type'] not in self.templates_map:
@@ -80,7 +94,16 @@ class AtillaLearn:
         title = entry['title']
         template = self.env.get_template(tpl)
         with open(os.path.join(self.output_dir, slug + '.html'), 'w') as f:
-            f.write(template.render(title=title, entry=entry, authors=authors, **self.nerd_dict))
+            f.write(template.render(
+                title=title,
+                entry=entry,
+                authors=authors,
+                meta={
+                    'url': self.domain + '/' + slug + '.html',
+                    'image': self.domain + '/img/' + entry['image']
+                },
+                **self.nerd_dict
+            ))
 
     def render_sitemap(self):
         datestr = time.strftime('%Y-%m-%d', time.gmtime())
