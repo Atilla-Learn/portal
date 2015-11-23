@@ -30,13 +30,18 @@ class AtillaLearn:
         self.collect_authors()
         self.collect_items()
 
-        # Nerd stuff
-        self.nerd_dict = {
+        # Common stuff
+        self.common_dict = {
             'gen_time': datetime.datetime.now(),
             'git_sha1': subprocess.check_output(
                 ['git', 'rev-parse', 'HEAD'],
                 universal_newlines=True
-            ).strip()
+            ).strip(),
+            'num': {
+                'trainings': len([k for k, v in self.items.items() if v['type'] == 'training']),
+                'talks': len([k for k, v in self.items.items() if v['type'] == 'talk']),
+                'conferences': len([k for k, v in self.items.items() if v['type'] == 'conference'])
+            }
         }
 
         self.domain = 'http://learn.atilla.org'
@@ -65,7 +70,7 @@ class AtillaLearn:
             f.write(template.render(
                 title='Atilla Learn',
                 meta={'url': self.build_url(), 'image': self.default_image},
-                **self.nerd_dict
+                **self.common_dict
             ))
 
     def render_landpage(self, type_, filename, title):
@@ -80,7 +85,7 @@ class AtillaLearn:
                 title=title,
                 entries=entries,
                 meta={'url': self.build_url(filename), 'image': self.default_image},
-                **self.nerd_dict
+                **self.common_dict
             ))
 
     def render_item(self, slug, entry):
@@ -104,7 +109,7 @@ class AtillaLearn:
                     'url': self.build_url(slug + '.html'),
                     'image': self.build_url('img', entry['image'])
                 },
-                **self.nerd_dict
+                **self.common_dict
             ))
 
     def render_sitemap(self):
