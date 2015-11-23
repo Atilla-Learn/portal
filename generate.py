@@ -7,7 +7,6 @@ from jinja2 import Environment, PackageLoader
 from slugify import slugify
 import yaml
 
-# TODO(thooms): self.build_url(endpoint)
 # TODO(thooms): better template parameters (dict builder)
 
 class AtillaLearn:
@@ -41,7 +40,10 @@ class AtillaLearn:
         }
 
         self.domain = 'http://learn.atilla.org'
-        self.default_image = 'http://learn.atilla.org/img/prompt.png'
+        self.default_image = self.build_url('img', 'prompt.png')
+
+    def build_url(self, *components):
+        return os.path.join(self.domain, *components)
 
     def collect_authors(self):
         for authorfile in os.listdir(self.authors_dir):
@@ -62,7 +64,7 @@ class AtillaLearn:
         with open(os.path.join(self.output_dir, 'index.html'), 'w') as f:
             f.write(template.render(
                 title='Atilla Learn',
-                meta={'url': self.domain, 'image': self.default_image},
+                meta={'url': self.build_url(), 'image': self.default_image},
                 **self.nerd_dict
             ))
 
@@ -77,7 +79,7 @@ class AtillaLearn:
                 landpage_title=title,
                 title=title,
                 entries=entries,
-                meta={'url': self.domain + '/' + filename, 'image': self.default_image},
+                meta={'url': self.build_url(filename), 'image': self.default_image},
                 **self.nerd_dict
             ))
 
@@ -99,8 +101,8 @@ class AtillaLearn:
                 entry=entry,
                 authors=authors,
                 meta={
-                    'url': self.domain + '/' + slug + '.html',
-                    'image': self.domain + '/img/' + entry['image']
+                    'url': self.build_url(slug + '.html'),
+                    'image': self.build_url('img', entry['image'])
                 },
                 **self.nerd_dict
             ))
@@ -108,11 +110,11 @@ class AtillaLearn:
     def render_sitemap(self):
         datestr = time.strftime('%Y-%m-%d', time.gmtime())
         endpoints = [
-            '/{}.html'.format(page)
+            '{}.html'.format(page)
             for page in ['conferences', 'trainings', 'talks'] + list(self.items.keys())
         ]
         pages = [
-            {'url': self.domain + endpoint, 'lastmod': datestr}
+            {'url': self.build_url(endpoint), 'lastmod': datestr}
             for endpoint in endpoints
         ]
         template = self.env.get_template('sitemap.xml')
