@@ -10,10 +10,10 @@ body {
 }
 
 .side-nav.fixed .partners {
-  position: relative;
-  bottom: 0px;
+  position: absolute;
+  bottom: 83px;
   height: 75px;
-  margin: auto;
+  margin-left: 55px;
 }
 
 .side-nav.fixed .partners img {
