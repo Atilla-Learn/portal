@@ -9,6 +9,21 @@ body {
   font-weight: 800;
 }
 
+@media(min-width:768px) {
+  .side-nav.fixed .partners {
+    position: fixed;
+    bottom: 0;
+    margin-left: 55px;
+  }  
+}
+
+
+.side-nav.fixed .partners img {
+  height: 75px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 main {
   flex: 1 0 auto;
   padding: 0px 0;

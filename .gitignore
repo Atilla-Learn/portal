@@ -4,3 +4,4 @@ vendor/
 __pycache__
 venv
 web/*.html
+web/*.xml

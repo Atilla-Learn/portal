@@ -1,10 +1,13 @@
 import os
 import datetime
 import subprocess
+import time
 
 from jinja2 import Environment, PackageLoader
 from slugify import slugify
 import yaml
+
+# TODO(thooms): better template parameters (dict builder)
 
 class AtillaLearn:
     output_dir = 'web'
@@ -27,14 +30,25 @@ class AtillaLearn:
         self.collect_authors()
         self.collect_items()
 
-        # Nerd stuff
-        self.nerd_dict = {
+        # Common stuff
+        self.common_dict = {
             'gen_time': datetime.datetime.now(),
             'git_sha1': subprocess.check_output(
                 ['git', 'rev-parse', 'HEAD'],
                 universal_newlines=True
-            ).strip()
+            ).strip(),
+            'num': {
+                'trainings': len([k for k, v in self.items.items() if v['type'] == 'training']),
+                'talks': len([k for k, v in self.items.items() if v['type'] == 'talk']),
+                'conferences': len([k for k, v in self.items.items() if v['type'] == 'conference'])
+            }
         }
+
+        self.domain = 'http://learn.atilla.org'
+        self.default_image = self.build_url('img', 'prompt.png')
+
+    def build_url(self, *components):
+        return os.path.join(self.domain, *components)
 
     def collect_authors(self):
         for authorfile in os.listdir(self.authors_dir):
@@ -53,7 +67,11 @@ class AtillaLearn:
     def render_home(self):
         template = self.env.get_template('index.html')
         with open(os.path.join(self.output_dir, 'index.html'), 'w') as f:
-            f.write(template.render(title='Atilla Learn', **self.nerd_dict))
+            f.write(template.render(
+                title='Atilla Learn',
+                meta={'url': self.build_url(), 'image': self.default_image},
+                **self.common_dict
+            ))
 
     def render_landpage(self, type_, filename, title):
         entries = {
@@ -62,7 +80,13 @@ class AtillaLearn:
         }
         template = self.env.get_template(filename)
         with open(os.path.join(self.output_dir, filename), 'w') as f:
-            f.write(template.render(landpage_title=title, title=title, entries=entries, **self.nerd_dict))
+            f.write(template.render(
+                landpage_title=title,
+                title=title,
+                entries=entries,
+                meta={'url': self.build_url(filename), 'image': self.default_image},
+                **self.common_dict
+            ))
 
     def render_item(self, slug, entry):
         if entry['type'] not in self.templates_map:
@@ -77,7 +101,31 @@ class AtillaLearn:
         title = entry['title']
         template = self.env.get_template(tpl)
         with open(os.path.join(self.output_dir, slug + '.html'), 'w') as f:
-            f.write(template.render(title=title, entry=entry, authors=authors, **self.nerd_dict))
+            f.write(template.render(
+                title=title,
+                entry=entry,
+                authors=authors,
+                meta={
+                    'url': self.build_url(slug + '.html'),
+                    'image': self.build_url('img', entry['image'])
+                },
+                **self.common_dict
+            ))
+
+    def render_sitemap(self):
+        datestr = time.strftime('%Y-%m-%d', time.gmtime())
+        endpoints = [
+            '{}.html'.format(page)
+            for page in ['conferences', 'trainings', 'talks'] + list(self.items.keys())
+        ]
+        pages = [
+            {'url': self.build_url(endpoint), 'lastmod': datestr}
+            for endpoint in endpoints
+        ]
+        template = self.env.get_template('sitemap.xml')
+        with open(os.path.join(self.output_dir, 'sitemap.xml'), 'w') as f:
+            f.write(template.render(pages=pages))
+
 
     def render(self):
         self.render_home()
@@ -86,6 +134,7 @@ class AtillaLearn:
         self.render_landpage('talk', 'talks.html', 'Talks')
         for slug, entry in self.items.items():
             self.render_item(slug, entry)
+        self.render_sitemap()
 
 if __name__ == '__main__':
     a = AtillaLearn()

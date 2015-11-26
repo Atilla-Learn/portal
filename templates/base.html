@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns/website#">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
     <meta name="google-site-verification" content="30rEodAdJUH7y9YsTZI1RyWm3M3Xt2qIuRzfX-OgydU" />
 
     <link rel="icon" href="http://cdn.atilla.org/ico/favicon.ico">
+
+    {# OpenGraph metadata #}
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ meta.url }}" />
+    <meta property="og:image" content="{{ meta.image }}" />
+    <meta property="og:site_name" content="Atilla">
+    <meta property="og:description" content="{{self.description()}}">
 
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="vendor/Materialize/dist/css/materialize.min.css" media="screen,projection"/>
@@ -26,10 +34,17 @@
           </a>
 
           <ul style="width:240px;">
-            <li><a class="flow-text" href="trainings.html">Formations</a></li>
-            <li><a class="flow-text" href="talks.html">Talks</a></li>
-            <li><a class="flow-text" href="conferences.html">Conférences</a></li>
+            <li><a class="flow-text" href="trainings.html">Formations <span class="badge">{{ num.trainings }}</span></a></li>
+            <li><a class="flow-text" href="talks.html">Talks <span class="badge">{{ num.talks }}</span></a></li>
+            <li><a class="flow-text" href="conferences.html">Conférences <span class="badge">{{ num.conferences }}</span></a></li>
           </ul>
+
+          <div class="partners center">
+            <p>
+              En partenariat avec
+            </p>
+            <img src="img/eisti.png" alt="" />
+          </div>
         </div>
     </header>
 
