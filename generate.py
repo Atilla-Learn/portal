@@ -53,20 +53,20 @@ class AtillaLearn:
     def collect_authors(self):
         for authorfile in os.listdir(self.authors_dir):
             if authorfile.endswith('.yaml'):
-                with open(os.path.join(self.authors_dir, authorfile)) as f:
+                with open(os.path.join(self.authors_dir, authorfile), encoding="utf-8") as f:
                     self.authors[authorfile.split('.')[0]] = yaml.load(f.read())
 
     def collect_items(self):
         for dir_ in self.items_dirs:
             for item_file in os.listdir(dir_):
                 if item_file.endswith('.yaml'):
-                    with open(os.path.join(dir_, item_file)) as f:
+                    with open(os.path.join(dir_, item_file), encoding="utf-8") as f:
                         d = yaml.load(f.read())
                         self.items[slugify(item_file.split('.')[0])] = d
 
     def render_home(self):
         template = self.env.get_template('index.html')
-        with open(os.path.join(self.output_dir, 'index.html'), 'w') as f:
+        with open(os.path.join(self.output_dir, 'index.html'), 'w', encoding="utf-8") as f:
             f.write(template.render(
                 title='Atilla Learn',
                 meta={'url': self.build_url(), 'image': self.default_image},
@@ -79,7 +79,7 @@ class AtillaLearn:
             if v['type'] == type_
         }
         template = self.env.get_template(filename)
-        with open(os.path.join(self.output_dir, filename), 'w') as f:
+        with open(os.path.join(self.output_dir, filename), 'w', encoding="utf-8") as f:
             f.write(template.render(
                 landpage_title=title,
                 title=title,
@@ -100,7 +100,7 @@ class AtillaLearn:
 
         title = entry['title']
         template = self.env.get_template(tpl)
-        with open(os.path.join(self.output_dir, slug + '.html'), 'w') as f:
+        with open(os.path.join(self.output_dir, slug + '.html'), 'w', encoding="utf-8") as f:
             f.write(template.render(
                 title=title,
                 entry=entry,
@@ -123,7 +123,7 @@ class AtillaLearn:
             for endpoint in endpoints
         ]
         template = self.env.get_template('sitemap.xml')
-        with open(os.path.join(self.output_dir, 'sitemap.xml'), 'w') as f:
+        with open(os.path.join(self.output_dir, 'sitemap.xml'), 'w', encoding="utf-8") as f:
             f.write(template.render(pages=pages))
 
 
