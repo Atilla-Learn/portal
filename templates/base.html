@@ -66,36 +66,36 @@
         </nav>
     {% block content %}
     {% endblock %}
+    </main>
 
     {# Footer #}
-      <footer class="page-footer blue-grey darken-5">
+    <footer class="page-footer blue-grey darken-5">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Learn Atilla</h5>
+            <p class="grey-text text-lighten-4">Site proposé par l'association <a href="http://atilla.org" class="atilla">Atilla</a>.</p>
+            <p class="grey-text text-lighten-4">Généré le {{ gen_time.strftime("%d/%m/%Y") }} à {{ gen_time.strftime("%H:%M") }},
+              révision <a href="https://github.com/Atilla-Learn/portal/commit/{{ git_sha1 }}">{{ git_sha1 }}</a>.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Liens</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="trainings.html">Formations</a></li>
+              <li><a class="grey-text text-lighten-3" href="talks.html">Talks</a></li>
+              <li><a class="grey-text text-lighten-3" href="conferences.html">Conférences</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
         <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Learn Atilla</h5>
-              <p class="grey-text text-lighten-4">Site proposé par l'association <a href="http://atilla.org" class="atilla">Atilla</a>.</p>
-              <p class="grey-text text-lighten-4">Généré le {{ gen_time.strftime("%d/%m/%Y") }} à {{ gen_time.strftime("%H:%M") }},
-                révision <a href="https://github.com/Atilla-Learn/portal/commit/{{ git_sha1 }}">{{ git_sha1 }}</a>.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Liens</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="trainings.html">Formations</a></li>
-                <li><a class="grey-text text-lighten-3" href="talks.html">Talks</a></li>
-                <li><a class="grey-text text-lighten-3" href="conferences.html">Conférences</a></li>
-              </ul>
-            </div>
-          </div>
+        © 2015 Atilla
+        <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-          © 2015 Atilla
-          <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
-          </div>
-        </div>
-      </footer>
+      </div>
+    </footer>
 
-    </main>
 
 
     {# Script #}
