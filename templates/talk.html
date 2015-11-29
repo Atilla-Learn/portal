@@ -63,7 +63,7 @@
           {% if entry.slides %}
             <div class="card-action">
               <a href="{{ entry.slides.link }}" class="waves-effect yellow darken-1 waves-dark btn black-text text-darken-5">Voir les slides</a>
-              <a href="{{ entry.slides.git }}">(source)</a>
+              {% if entry.slides.git %}<a href="{{ entry.slides.git }}">(source)</a>{% endif %}
             </div>
             {% endif %}
         </div>
