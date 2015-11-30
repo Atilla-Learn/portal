@@ -9,7 +9,7 @@ body {
   font-weight: 800;
 }
 
-@media(min-width:768px) {
+@media(min-width:992px) {
   .side-nav.fixed .partners {
     position: fixed;
     bottom: 0;
