@@ -21,4 +21,19 @@ Liste des talks proposée par Atilla
         {% include 'includes/item.html' %}
       {% endfor %}
     </div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://atilla.org/talks.html",
+          "name": "Talktillas"
+        }
+      }]
+    }
+    </script>
 {% endblock %}
