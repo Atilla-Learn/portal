@@ -1,0 +1,18 @@
+type: talk
+title: Fast Inverse Square Root
+date: 26/11/2015
+image: prompt_talks.png
+short: How do you use IEEE 754 format to compute inverse square root
+replay_id: AOIGO63vxv8
+authors:
+  - choclate
+description: In this talk, we explain how the magic constant 0x5f3759df appeared in Quake III arena source code to compute inverse square root.
+links:
+  - type: http
+    text: 0x5f3759df
+    link: http://h14s.p5r.org/2012/09/0x5f3759df.html
+    source: blog
+    author: Christian Plesner Hansen
+slides:
+  link: https://github.com/Atilla-Learn/talk-fast-inverse-square-root/raw/master/slide.pdf
+  git: https://github.com/Atilla-Learn/talk-fast-inverse-square-root
