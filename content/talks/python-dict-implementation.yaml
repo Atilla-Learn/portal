@@ -3,7 +3,7 @@ title: Implémentation des dictionaires en Python
 date: 26/11/2015
 image: prompt_talks.png
 short: "Comment sont implémentés les dictionnaires disponibles dans le langage Python, et plus précisément dans son implémentation la plus utilisée : CPython."
-replay_id: Hw1WpGqon1c
+replay_id: VUmHo39hjDY
 authors:
   - flavr
 description: "Comment sont implémentés les dictionnaires disponibles dans le langage Python, et plus précisément dans son implémentation la plus utilisée : CPython."
