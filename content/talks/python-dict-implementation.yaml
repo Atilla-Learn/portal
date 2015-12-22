@@ -1,0 +1,23 @@
+type: talk
+title: Implémentation des dictionaires en Python
+date: 26/11/2015
+image: prompt_talks.png
+short: Comment sont implémentés les dictionnaires disponibles dans le langage Python, et plus précisément dans son implémentation la plus utilisée : CPython.
+replay_id: Hw1WpGqon1c
+authors:
+  - flavr
+description: Comment sont implémentés les dictionnaires disponibles dans le langage Python, et plus précisément dans son implémentation la plus utilisée : CPython.
+links:
+  - type: video
+    text: The Mighty Dictionary
+    link: https://www.youtube.com/watch?v=C4Kc8xzcA68
+    source: PyCon 2010
+    author: Brandon Craig Rhodes
+  - type: http
+    text: dictobject.c
+    link: http://svn.python.org/projects/python/trunk/Objects/dictobject.c
+    source: Internet
+    author: CPython team
+slides:
+  link: http://irrealis.me/files/haskell-webservices.pdf
+  git:
