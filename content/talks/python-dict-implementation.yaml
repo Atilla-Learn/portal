@@ -19,5 +19,5 @@ links:
     source: svn.python.org
     author: Python team
 slides:
-  link: http://irrealis.me/files/haskell-webservices.pdf
+  link: http://slides.atilla.org/talk-python-dict-implementation/
   git: https://github.com/Atilla-Learn/talk-python-dict-implementation
