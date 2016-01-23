@@ -11,15 +11,13 @@
   <div class="container">
     <h3 class="yellow-text text-darken-2">{{ entry.title}}</h3>
     <p class="flow-text">{{ entry.short }}</p>
+    {% if entry.replay_id %}
     <div class="card-panel">
-      <div class="video-container center">
-        {% if entry.replay_id %}
-          <iframe width="1280" height="720" src="https://www.youtube.com/embed/{{ entry.replay_id }}" frameborder="0" allowfullscreen></iframe>
-        {% else %}
-          <h3>Le replay sera disponible très prochainement...</h3>
-        {% endif %}
+        <div class="video-container center">
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/{{ entry.replay_id }}" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
+    {% endif %}
     <div class="row">
       <div class="col l7 s12">
         <div class="card-panel teal">
