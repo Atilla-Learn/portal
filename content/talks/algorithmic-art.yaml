@@ -1,0 +1,18 @@
+type: talk
+title: Art algorithmique
+date: 10/12/2015
+image: prompt_talks.png
+short: "Qu'est-ce que l'art algorithmique, et à quoi ça ressemble ?"
+replay_id:
+authors:
+  - terrienale
+description: "Qu'est-ce que l'art algorithmique ? Nous allons le voir avec des exemples et une de mes réalisations."
+links:
+  - type: http
+    text: DICCAN
+    link: http://diccan.com/
+    source: Les algoristes
+    author: Pierre Berger
+slides:
+  link: https://github.com/Kirogo/talk_algorithmic_art/raw/master/slides_talk_art_algo.pdf
+  git: https://github.com/Kirogo/talk_algorithmic_art
