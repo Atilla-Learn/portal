@@ -1,7 +1,7 @@
 type: talk
 title: Fast Inverse Square Root
 date: 26/11/2015
-image: prompt_talks.png
+image: talk-magical-const.png
 short: How do you use IEEE 754 format to compute inverse square root
 replay_id: AOIGO63vxv8
 authors:
