@@ -2,11 +2,11 @@ type: training
 title: Git
 date: 25/01/2016
 image: git.png
-short: Formation sur l'outil de gestion de version et de gestion de projet.
+short: Formation sur l'outil de versionning et de gestion de projet.
 authors:
   - antoinegirard
   - smk
-description: Beaucoup d'entre vous veulent apprendre à gérer leur projet différent, et à se faciliter le travail. C'est l'objet de cette formation.
+description: Beaucoup d'entre vous veulent apprendre à gérer leurs différents projet, et à se faciliter le travail notamment en groupe. C'est l'objet de cette formation.
 links:
   - type: http
     text: A successful Git branching model
