@@ -1,0 +1,18 @@
+type: training
+title: Git
+date: 25/01/2016
+image: git.png
+short: Formation sur l'outil de gestion de version et de gestion de projet.
+authors:
+  - antoinegirard
+  - smk
+description: Beaucoup d'entre vous veulent apprendre à gérer leur projet différent, et à se faciliter le travail. C'est l'objet de cette formation.
+links:
+  - type: http
+    text: A successful Git branching model
+    link: http://nvie.com/posts/a-successful-git-branching-model/
+    source: nvie.com
+    author: Vincent Driessen
+slides:
+  link: http://slides.atilla.org/formation-git-2016/
+  git: http://gitlab.etude.eisti.fr/learn-atilla/formation-git-2016
