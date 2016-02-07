@@ -1,0 +1,17 @@
+type: talk
+title: Introduction to garbage collection
+date: 1/02/2016
+image: talk-garbage-collection.png
+short: Introduction to the principles of garbage collection, and how it is implemented in various languages.
+replay_id:
+authors:
+  - thooms
+description: Introduction to the principles of garbage collection, and how it is implemented in various languages.
+links:
+  - type: http
+    text: Wikipedia's entry on garbage collection
+    link: https://en.wikipedia.org/wiki/Garbage_collection_%28computer_science%29
+    source: Internet
+    author: Internet
+slides:
+  link: http://irrealis.me/files/how-to-gc.pdf
