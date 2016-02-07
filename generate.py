@@ -1,5 +1,6 @@
 import os
 import datetime
+import collections
 import subprocess
 import time
 
@@ -74,10 +75,15 @@ class AtillaLearn:
             ))
 
     def render_landpage(self, type_, filename, title):
-        entries = {
-            k: v for k, v in self.items.items()
+        entries = [
+            (k,v) for k, v in self.items.items()
             if v['type'] == type_
-        }
+        ]
+        entries = collections.OrderedDict(sorted(
+            entries,
+            key=lambda x: datetime.datetime.strptime(x[1]['date'], "%d/%m/%Y"),
+            reverse=True
+        ))
         template = self.env.get_template(filename)
         with open(os.path.join(self.output_dir, filename), 'w', encoding="utf-8") as f:
             f.write(template.render(
