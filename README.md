@@ -5,11 +5,13 @@ Python-generated static website, with `materialize.css` design.
 # How to get a working instance
 
 * Clone the repo
-* `pyvenv venv`
-* `source venv/bin/activate`
-* `pip install -r requirements.txt`
-* `python generate.py`
-* `bower install` 
+```
+$ virtualenv -p `which python3` venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+$ python generate.py
+$ bower install
+```
 
 # Structure of the repo
 
