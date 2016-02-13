@@ -1,0 +1,14 @@
+type: talk
+title: Introduction to OpenPGP
+date: 01/02/2016
+image: talk-openpgp.png
+short: A short introduction to the OpenPGP standard
+replay_id: -xruuWkvesQ
+authors:
+  - caubin
+  - xer
+description: In this talk, we take a quick overview of the principles used in the OpenPGP standard and describe the notions behind symetric and asymectric encryption. The last part of this talk is a demonstration of GPG, the standard tool used in GNU/Linux operating systems for OpenPGP encryption.
+links:
+slides:
+  link: http://slides.caubin.fr/talk-pgp.pdf
+  git:
