@@ -5,7 +5,12 @@
         <img src="img/{{ entry.image }}" class="responsive-img"/>
       </div>
       <div class="col s8">
-        <h4 class="date"><i class="fa fa-calendar-o"></i> {{ entry.date }}</h4>
+        <h4 class="date">
+            <i class="fa fa-calendar-o"></i> {{ entry.date }}
+            {% if entry.replay_id %}
+                <i class="fa fa-video-camera"></i>
+            {% endif %}
+        </h4>
         <h2 class="name">{{ entry.title }}</h2>
         <p>{{ entry.short }}</p>
       </div>
