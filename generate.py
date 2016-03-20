@@ -17,7 +17,8 @@ class AtillaLearn:
     templates_map = {
         'conference': 'conference.html',
         'talk': 'talk.html',
-        'training': 'training.html'
+        'training': 'training.html',
+        'authors': 'authors.html'
     }
 
     def __init__(self):
@@ -41,7 +42,8 @@ class AtillaLearn:
             'num': {
                 'trainings': len([k for k, v in self.items.items() if v['type'] == 'training']),
                 'talks': len([k for k, v in self.items.items() if v['type'] == 'talk']),
-                'conferences': len([k for k, v in self.items.items() if v['type'] == 'conference'])
+                'conferences': len([k for k, v in self.items.items() if v['type'] == 'conference']),
+                'authors' : len(self.authors)
             }
         }
 
@@ -138,6 +140,7 @@ class AtillaLearn:
         self.render_landpage('conference', 'conferences.html', 'Conférences')
         self.render_landpage('training', 'trainings.html', 'Formations')
         self.render_landpage('talk', 'talks.html', 'Talks')
+        self.render_landpage('authors', 'authors.html', 'Auteurs')
         for slug, entry in self.items.items():
             self.render_item(slug, entry)
         self.render_sitemap()
