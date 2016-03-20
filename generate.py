@@ -88,11 +88,9 @@ class AtillaLearn:
                 reverse=True
             ))
         else:
-            # TODO : sort that dict.
             entries = [
                 (k,v) for k, v in self.authors.items()
             ]
-            
             entries = collections.OrderedDict(sorted(
                 entries,
                 key=lambda x: x[1]['name']
