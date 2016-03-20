@@ -17,6 +17,9 @@ Liste des conférenciers/formateurs sans qui tout ceci ne serait rien &leq;3
             Vous trouverez ici toutes nos conférenciers. Et ça c'est cool.
         </p>
 
+        {% for slug, entry in entries.items() %}
+          {% include 'includes/author-item.html' %}
+        {% endfor %}
       {% else %}
         {% include 'includes/empty.html' %}
       {% endif %}
