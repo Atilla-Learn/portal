@@ -89,7 +89,14 @@ class AtillaLearn:
             ))
         else:
             # TODO : sort that dict.
-            entries = self.authors
+            entries = [
+                (k,v) for k, v in self.authors.items()
+            ]
+            
+            entries = collections.OrderedDict(sorted(
+                entries,
+                key=lambda x: x[1]['name']
+            ))
 
         template = self.env.get_template(filename)
         with open(os.path.join(self.output_dir, filename), 'w', encoding="utf-8") as f:
