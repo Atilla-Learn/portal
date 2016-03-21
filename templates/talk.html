@@ -66,13 +66,15 @@
             {% endif %}
         </div>
         <div class="row">
-          {% for author in authors.values() %}
+          {% for author in authors.items() %}
             <div class="col s6">
               <div class="card">
-                <div class="card-image">
-                  <img src="img/authors/{{ author.picture }}">
-                  <span class="card-title">{{ author.name }}</span>
-                </div>
+                <a href="{{author[0]}}.html">
+                  <div class="card-image">
+                    <img src="img/authors/{{ author[1].picture }}">
+                    <span class="card-title">{{ author[1].name }}</span>
+                  </div>
+                </a>
               </div>
             </div>
           {% endfor %}
