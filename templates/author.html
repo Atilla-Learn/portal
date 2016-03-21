@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block title %}Les conférenciers{% endblock %}
+{% block subtitle %}Auteurs > {{ author.name }} {% endblock %}
+
+
+{% block description %}
+Liste des conférenciers/formateurs sans qui tout ceci ne serait rien &lth;3
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m9">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><h4>{{ author.name }}</h4></span>
+              <p>{{ author.email }}</p>
+            </div>
+          </div>
+      </div>
+
+      <div class="col s12 m3">
+        <div class="card">
+            <div class="card-image">
+              <img class="responsive-img" src="img/authors/{{ author.picture }}">
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+    {% if talks %}
+      <h3>Talks</h3>
+      <div class="row">
+        {% for talk in talks %}
+            <div class="col s12 m6 l4">
+              <div class="card medium">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="img/{{ talk[1].image }}">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{ talk[1].title }}<i class="material-icons right">more_vert</i></span>
+                  <p>{{ talk[1].short }}</p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">{{ talk[1].title }}<i class="material-icons right">close</i></span>
+                  <p>{{ talk[1].description }}</p>
+                  <p><a href="{{ talk[0] }}.html">Voir le talk</a></p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+    {% endif %}
+
+
+    
+    {% if conferences %}
+      <h3>Conférences</h3>
+      <div class="row">
+        {% for conference in conferences %}
+          <div class="col s12 m6 l4">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="img/{{ conference[1].image }}">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{ conference[1].title }}<i class="material-icons right">more_vert</i></span>
+                <p>{{ conference[1].short }}</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">{{ conference[1].title }}<i class="material-icons right">close</i></span>
+                <p>{{ conference[1].description }}</p>
+                <p><a href="{{ conference[0] }}.html">Voir le conference</a></p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if trainings %}
+      <h3>Formations</h3>
+      <div class="row">
+        {% for training in trainings %}
+          <div class="col s12 m6 l4">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="img/{{ training[1].image }}">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{ training[1].title }}<i class="material-icons right">more_vert</i></span>
+                <p>{{ training[1].short }}</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">{{ training[1].title }}<i class="material-icons right">close</i></span>
+                <p>{{ training[1].description }}</p>
+                <p><a href="{{ training[0] }}.html">Voir le training</a></p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@id": "https://atilla.org/conferences.html",
+        "name": "Conférences"
+      }
+    }]
+  }
+  </script>
+
+{% endblock %}
