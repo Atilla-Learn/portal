@@ -148,9 +148,9 @@ class AtillaLearn:
         with open(os.path.join(self.output_dir, entry[0] + '.html'), 'w', encoding="utf-8") as f:
             f.write(template.render(
                 author = entry[1],
-                talks = talks.items(),
-                conferences = conferences.items(),
-                trainings = trainings.items(),
+                talks = talks,
+                conferences = conferences,
+                trainings = trainings,
                 meta={
                     'url': self.build_url(entry[0] + '.html'),
                     'image': self.build_url('img', entry[1]['picture'])

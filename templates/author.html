@@ -33,19 +33,19 @@ Liste des conférenciers/formateurs sans qui tout ceci ne serait rien &lt;3
     {% if talks %}
       <h3>Talks</h3>
       <div class="row">
-        {% for talk in talks %}
+        {% for name, talk in talks.items() %}
             <div class="col s12 m6">
               <div class="card medium">
                 <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="img/{{ talk[1].image }}">
+                  <img class="activator" src="img/{{ talk.image }}">
                 </div>
                 <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">{{ talk[1].title }}<i class="material-icons right">more_vert</i></span>
+                  <span class="card-title activator grey-text text-darken-4">{{ talk.title }}<i class="material-icons right">more_vert</i></span>
                 </div>
                 <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">{{ talk[1].title }}<i class="material-icons right">close</i></span>
-                  <p>{{ talk[1].description }}</p>
-                  <p><a href="{{ talk[0] }}.html">Voir le talk</a></p>
+                  <span class="card-title grey-text text-darken-4">{{ talk.title }}<i class="material-icons right">close</i></span>
+                  <p>{{ talk.description }}</p>
+                  <p><a href="{{ name }}.html">Voir le talk</a></p>
                 </div>
               </div>
             </div>
@@ -58,19 +58,19 @@ Liste des conférenciers/formateurs sans qui tout ceci ne serait rien &lt;3
     {% if conferences %}
       <h3>Conférences</h3>
       <div class="row">
-        {% for conference in conferences %}
+        {% for name, conference in conferences.items() %}
           <div class="col s12 m6">
             <div class="card medium">
               <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="img/{{ conference[1].image }}">
+                <img class="activator" src="img/{{ conference.image }}">
               </div>
               <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">{{ conference[1].title }}<i class="material-icons right">more_vert</i></span>
+                <span class="card-title activator grey-text text-darken-4">{{ conference.title }}<i class="material-icons right">more_vert</i></span>
               </div>
               <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">{{ conference[1].title }}<i class="material-icons right">close</i></span>
-                <p>{{ conference[1].description }}</p>
-                <p><a href="{{ conference[0] }}.html">Voir la conférence</a></p>
+                <span class="card-title grey-text text-darken-4">{{ conference.title }}<i class="material-icons right">close</i></span>
+                <p>{{ conference.description }}</p>
+                <p><a href="{{ name }}.html">Voir la conférence</a></p>
               </div>
             </div>
           </div>
@@ -81,19 +81,19 @@ Liste des conférenciers/formateurs sans qui tout ceci ne serait rien &lt;3
     {% if trainings %}
       <h3>Formations</h3>
       <div class="row">
-        {% for training in trainings %}
+        {% for name, training in trainings.items() %}
           <div class="col s12 m6">
             <div class="card medium">
               <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="img/{{ training[1].image }}">
+                <img class="activator" src="img/{{ training.image }}">
               </div>
               <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">{{ training[1].title }}<i class="material-icons right">more_vert</i></span>
+                <span class="card-title activator grey-text text-darken-4">{{ training.title }}<i class="material-icons right">more_vert</i></span>
               </div>
               <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">{{ training[1].title }}<i class="material-icons right">close</i></span>
-                <p>{{ training[1].description }}</p>
-                <p><a href="{{ training[0] }}.html">Voir la formation</a></p>
+                <span class="card-title grey-text text-darken-4">{{ training.title }}<i class="material-icons right">close</i></span>
+                <p>{{ training.description }}</p>
+                <p><a href="{{ name }}.html">Voir la formation</a></p>
               </div>
             </div>
           </div>
