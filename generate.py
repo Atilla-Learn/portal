@@ -17,7 +17,8 @@ class AtillaLearn:
     templates_map = {
         'conference': 'conference.html',
         'talk': 'talk.html',
-        'training': 'training.html'
+        'training': 'training.html',
+        'authors': 'authors.html'
     }
 
     def __init__(self):
@@ -41,7 +42,8 @@ class AtillaLearn:
             'num': {
                 'trainings': len([k for k, v in self.items.items() if v['type'] == 'training']),
                 'talks': len([k for k, v in self.items.items() if v['type'] == 'talk']),
-                'conferences': len([k for k, v in self.items.items() if v['type'] == 'conference'])
+                'conferences': len([k for k, v in self.items.items() if v['type'] == 'conference']),
+                'authors' : len(self.authors)
             }
         }
 
@@ -75,15 +77,25 @@ class AtillaLearn:
             ))
 
     def render_landpage(self, type_, filename, title):
-        entries = [
-            (k,v) for k, v in self.items.items()
-            if v['type'] == type_
-        ]
-        entries = collections.OrderedDict(sorted(
-            entries,
-            key=lambda x: datetime.datetime.strptime(x[1]['date'], "%d/%m/%Y"),
-            reverse=True
-        ))
+        if (type_ != "authors"):
+            entries = [
+                (k,v) for k, v in self.items.items()
+                if v['type'] == type_
+            ]
+            entries = collections.OrderedDict(sorted(
+                entries,
+                key=lambda x: datetime.datetime.strptime(x[1]['date'], "%d/%m/%Y"),
+                reverse=True
+            ))
+        else:
+            entries = [
+                (k,v) for k, v in self.authors.items()
+            ]
+            entries = collections.OrderedDict(sorted(
+                entries,
+                key=lambda x: x[1]['name']
+            ))
+
         template = self.env.get_template(filename)
         with open(os.path.join(self.output_dir, filename), 'w', encoding="utf-8") as f:
             f.write(template.render(
@@ -118,6 +130,34 @@ class AtillaLearn:
                 **self.common_dict
             ))
 
+    def render_author(self, entry):
+        template = self.env.get_template('author.html')
+        talks, conferences, trainings = {}, {}, {}
+
+        for k,v in self.items.items():
+            if entry[0] in v['authors']:
+                if v['type'] == 'talk':
+                    talks[k] = v
+                elif v['type'] == 'conference':
+                    conferences[k] = v
+                elif v['type'] == 'training':
+                    trainings[k] = v
+
+        # TODO: Reverse sorting
+
+        with open(os.path.join(self.output_dir, entry[0] + '.html'), 'w', encoding="utf-8") as f:
+            f.write(template.render(
+                author = entry[1],
+                talks = talks,
+                conferences = conferences,
+                trainings = trainings,
+                meta={
+                    'url': self.build_url(entry[0] + '.html'),
+                    'image': self.build_url('img', entry[1]['picture'])
+                },
+                **self.common_dict
+            ))
+
     def render_sitemap(self):
         datestr = time.strftime('%Y-%m-%d', time.gmtime())
         endpoints = [
@@ -138,8 +178,11 @@ class AtillaLearn:
         self.render_landpage('conference', 'conferences.html', 'Conférences')
         self.render_landpage('training', 'trainings.html', 'Formations')
         self.render_landpage('talk', 'talks.html', 'Talks')
+        self.render_landpage('authors', 'authors.html', 'Auteurs')
         for slug, entry in self.items.items():
             self.render_item(slug, entry)
+        for entry in self.authors.items():
+            self.render_author(entry)
         self.render_sitemap()
 
 if __name__ == '__main__':
