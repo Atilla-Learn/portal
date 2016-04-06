@@ -1,0 +1,13 @@
+type: conference
+title: Internet et libertés avec Adrienne Charmet
+date: 15/02/2016
+image: affiche-ac.png
+short: Adrienne Charmet nous présente LQDN et ses actions.
+replay_id: QXnsp0iYxrI
+authors:
+  - ac
+description: ATILLA a eu le plaisir de recevoir le 15 février 2016 Adrienne Charmet coordinatrice des campagnes de La Quadrature Du Net, autour des problématiques de surveillance, de neutralité du net, de vie privée et de censure.
+links:
+  - type: http
+    text: Site de La Quadrature
+    link: https://laquadrature.net
