@@ -1,0 +1,17 @@
+type: talk
+title: Introduction à reveal.js
+date: 01/02/2016
+image: talk-reveal-js.png
+short: "Venez à la découverte d'un outil fabuleux pour faire vos slides. Simple, rapide, multiplateforme, complet... Que dire d'autre ?"
+replay_id: jDCL9MSKd8s
+authors:
+  - antoinegirard
+description: "Venez à la découverte d'un outil fabuleux pour faire vos slides. Simple, rapide, multiplateforme, complet... Que dire d'autre ?"
+links:
+  - type: http
+    text: Site de reveal.js
+    link: http://lab.hakim.se/reveal-js/#/
+    author: Hakim El Hattab
+slides:
+  link: http://slides.antoinegirard.eu/2016/talks/reveal-js/
+  git: https://github.com/Atilla-Learn/talk-reveal-js
