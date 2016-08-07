@@ -1,0 +1,23 @@
+type: talk
+title: Applications Hybrides
+date: 01/02/2016
+image: talk-hybrid-apps.png
+short: Introduction au développement multi-plateforme avec Kivy et Cordova
+replay_id: o5sn2IHPjPQ
+authors:
+  - choclate
+description: Découvrez avec Clément Villain comment développer une application mobile une seule fois et la rendre disponible sur toutes les plateformes d'un coup !
+links:
+  - type: http
+    text: Créez un Pong ave Kivy!
+    link: https://kivy.org/docs/tutorials/pong.html 
+    source: Site officiel
+    author: Kivy
+  - type: http
+    text: Comment créer une app avec Cordova
+    link: https://cordova.apache.org/docs/en/latest/guide/cli/index.html
+    source: Site officiel
+    author: Apache Cordova
+slides:
+  link: http://slides.atilla.org/app-hybrides/#/
+  git: https://github.com/Atilla-Learn/app-hybrides
