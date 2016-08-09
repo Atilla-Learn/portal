@@ -1,23 +1,23 @@
 type: talk
-title: Using Haskell to write webservices
+title: Utiliser Haskell pour écrire des web services
 date: 26/11/2015
 image: talk-webservices-haskell.png
-short: How can we use Haskell's strong type system and ecosystem to write short, beautiful, and typed webservices?
+short: Comment peut-on utiliser le type fort et l'écosystème d'Haskell pour écrire des web services court, beau et fortement typés ?
 replay_id: Hw1WpGqon1c
 authors:
   - thooms
-description: How can we use Haskell's strong type system and ecosystem to write short, beautiful, and typed webservices?
+description: Comment peut-on utiliser le type fort et l'écosystème d'Haskell pour écrire des web services court, beau et fortement typés ?
 links:
   - type: http
-    text: Haskell's homepage
+    text: Page d'accueil d'Haskell
     link: https://www.haskell.org/
     source: Internet
-    author: Internet
+    author: L'équipe d'Haskell
   - type: http
-    text: Servant's homepage
+    text: Page d'accueil de Servant
     link: https://haskell-servant.github.io/
     source: Internet
-    author: Servant's team
+    author: L'équipe de Servant
 slides:
   link: http://irrealis.me/files/haskell-webservices.pdf
   git:
