@@ -6,7 +6,7 @@ short: Comment peut-on utiliser le type fort et l'écosystème d'Haskell pour é
 replay_id: Hw1WpGqon1c
 authors:
   - thooms
-description: Comment peut-on utiliser le type fort et l'écosystème d'Haskell pour écrire des web services court, beau et fortement typés ?
+description: Comment peut-on utiliser le typage fort et l'écosystème d'Haskell pour écrire des web services court, beau et fortement typés ?
 links:
   - type: http
     text: Page d'accueil d'Haskell
