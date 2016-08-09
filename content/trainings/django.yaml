@@ -1,0 +1,18 @@
+type: training
+title: Django
+date: 14/01/2016
+image: affiche-django.jpg
+short: Formation sur Django, ou comment faire du web avec Python
+authors:
+  - clapieflor
+  - hennthomas
+description: Vous voulez faire un site web dynamique, mais ne voulez pas utliser PHP ? Découvrez Django, le puissant framework "batteries included" basé pour python, fait pour les perfectionnistes avec des deadlines !
+links:
+  - type: http
+    text: Site officiel du projet
+    link: http://djangoproject.com
+    source: Site officiel
+    author: Equipe de Django
+slides:
+  link: https://www.slides.atilla.org/formation-django-2015.pdf
+  git: https://github.com/Atilla-Learn/django-2015
