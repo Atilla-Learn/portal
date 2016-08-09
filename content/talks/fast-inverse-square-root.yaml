@@ -6,7 +6,7 @@ short: Comment peut on utiliser le format IEEE754 pour calculer la racine carré
 replay_id: AOIGO63vxv8
 authors:
   - choclate
-description: Dans ce takl, nous expliquons comment la constante magique 0x5f3759df est apparue dans le code source de Quake III arena pour calculer la racine carré inverse
+description: Dans ce talk, nous expliquons comment la constante magique 0x5f3759df est apparue dans le code source de Quake III arena pour calculer la racine carré inverse
 links:
   - type: http
     text: 0x5f3759df
