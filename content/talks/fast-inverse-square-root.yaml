@@ -1,12 +1,12 @@
 type: talk
-title: Fast Inverse Square Root
+title: Histoire de la constante magique
 date: 26/11/2015
 image: talk-magical-const.png
-short: How do you use IEEE 754 format to compute inverse square root
+short: Comment peut on utiliser le format IEEE754 pour calculer la racine carré inverse ?
 replay_id: AOIGO63vxv8
 authors:
   - choclate
-description: In this talk, we explain how the magic constant 0x5f3759df appeared in Quake III arena source code to compute inverse square root.
+description: Dans ce talk, nous expliquons comment la constante magique 0x5f3759df est apparue dans le code source de Quake III arena pour calculer la racine carré inverse
 links:
   - type: http
     text: 0x5f3759df
