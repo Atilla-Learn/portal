@@ -1,12 +1,12 @@
 type: talk
-title: Introduction to garbage collection
+title: Introduction au garbage collection
 date: 01/02/2016
 image: talk-garbage-collection.png
-short: Introduction to the principles of garbage collection, and how it is implemented in various languages.
+short: Introduction aux principes du garbage collector et son implémentation dans plusieurs langages
 replay_id: AvP8f3TdL4Q
 authors:
   - thooms
-description: Introduction to the principles of garbage collection, and how it is implemented in various languages.
+description: Introduction aux principes du garbage collector et de son implémentation dans plusieurs langages
 links:
   - type: http
     text: Wikipedia's entry on garbage collection
