@@ -14,10 +14,10 @@ links:
     source: Site officiel
     author: Equipe de Django
   - type: http
-    text: Materiel utilisé pour la formation
+    text: Support utilisé pour la formation
     link: https://github.com/Atilla-Learn/django-2015
     source: Contenu original
     author: Florent Clapié et Thomas Henn
-    
+
 slides:
   link: https://www.slides.atilla.org/formation-django-2015.pdf
