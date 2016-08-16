@@ -1,0 +1,12 @@
+type: talk
+title: Introduction aux ordinateurs quantiques
+date: 01/02/2016
+image: talk-quantum-computers.png
+short: Qu'est ce que l'ordinateur quantique et pourquoi est il si spécial ?
+replay_id: JS4xHmo9gYY
+authors:
+  - tiaosheng
+description: Suivez le guide, Martin Pozuelo, qui vous introduira les limitations actuelles et les challenges de demain des ordinateurs quantiques !
+slides:
+  link: https://slides.atilla.org/ordinateurs-quantiques
+  git: https://github.com/Atilla-Learn/Talk-Ordinateurs-Quantiques
