@@ -1,0 +1,34 @@
+type: talk
+title: Découverte de l'infra d'Atilla
+date: 01/02/2016
+image: talk-infra-atillapng
+short: Découverte de l'infrastructure réseau d'Atilla sans laquelle nous ne pourrions travailler
+replay_id: xIaLH6LHqFo
+authors:
+  - caubin
+  - kto
+description: Découvrez les coulisses d'Atilla! A travers ce talk sur l'infrastructure du réseau, nous levons le voile sur la structure en constante évolution qui nous permet de bidouiller toujours plus et toujours plus fort!
+links:
+    - type: http
+      text: Site de Débian
+      link: http://debian.org
+      source: Site officiel
+      author: Debian
+    - type: http
+      text: Hyperviseur Xen
+      link: https://xenproject.org
+      source: Site officiel
+      author: Linux Foundation
+    - type: http
+      text: Introduction au réseau
+      link: http://openbookproject.net/courses/intro2ict/networking/intro.html
+      source: Openbook project
+      author: Openbook project
+    - type: book
+      text: Introduction à l'administration système
+      link: http://www.tldp.org/LDP/sag/sag.pdf
+      source: The Linux Documentation Project
+      author: Oja, Stafford, Weeks, Wirzenius
+slides:
+  link: http://slides.atilla.org/infra-2016.pdf
+  git: https://github.com/Atilla-Learn/talk-infra-2016
