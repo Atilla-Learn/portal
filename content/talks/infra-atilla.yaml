@@ -1,13 +1,13 @@
 type: talk
-title: Découverte de l'infra d'Atilla
+title: Découverte de l'infra d'ATILLA
 date: 21/03/2016
 image: talk-infra-atillapng
-short: Découverte de l'infrastructure réseau d'Atilla sans laquelle nous ne pourrions travailler
+short: Découverte de l'infrastructure réseau d'ATILLA sans laquelle nous ne pourrions travailler
 replay_id: xIaLH6LHqFo
 authors:
   - caubin
   - kto
-description: Découvrez les coulisses d'Atilla! A travers ce talk sur l'infrastructure du réseau, nous levons le voile sur la structure en constante évolution qui nous permet de bidouiller toujours plus et toujours plus fort!
+description: Découvrez les coulisses d'ATILLA! A travers ce talk sur l'infrastructure du réseau, nous levons le voile sur la structure en constante évolution qui nous permet de bidouiller toujours plus et toujours plus fort!
 links:
     - type: http
       text: Site de Débian
