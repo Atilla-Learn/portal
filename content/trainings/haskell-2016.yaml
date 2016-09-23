@@ -1,12 +1,12 @@
 type: training
 title: Dive Into Haskell (A Gentle Introduction)
 date: 29/04/2016
-image: talk-webservices-haskell.png
+image: training-haskell.png
 short: First steps into the Haskell programming language
 replay_id: QFpINi294eY
 authors:
   - thooms
-description: First steps into the Haskell programming language. Code example: a full applicative and monadic parser.
+description: "First steps into the Haskell programming language. Code example: a full applicative and monadic parser."
 links:
   - type: http
     text: Haskell Homepage
