@@ -1,0 +1,28 @@
+type: training
+title: Python from scratch
+date: 04/10/2016
+image: affiche-python-2016.png
+short: Introduction à Python, en reprenant depuis les bases.
+authors:
+  - terrienale
+  - tiaosheng
+description: Première séance de la formation python pour l'année 2016-2017. Au programme, bases de la syntaxe python et structures de données basiques.
+links:
+  - type: http
+    text: Référence distribuée pendant la formation
+    link: https://slides.atilla.org/python-2016/handout-1.pdf
+    source: ATILLA
+    author: Martin Pozuelo
+  - type: http
+    text: Dive into Python3
+    link: http://www.diveintopython3.net/
+    source: Dive into Python
+    author: Mark Pilgrim
+  - type: http
+    text: Introduction to Programming in Python
+    link: http://introcs.cs.princeton.edu/python/home/
+    source: University of Princeton
+    author: Robert Sedgewick, Kevin Wayne, and Robert Dondero
+slides:
+  link: https://slides.atilla.org/python-2016/formation-1.pdf
+  git: https://gitlab.atilla.org/terrienale/slides_python_2016
