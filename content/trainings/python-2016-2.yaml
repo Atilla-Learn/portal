@@ -1,0 +1,23 @@
+type: training
+title: Python from basics
+date: 04/10/2016
+image: affiche-python-2016.png
+short: Concepts intermédiaires et avancés pour Python
+authors:
+  - terrienale
+  - tiaosheng
+description: Deuxième séance de la formation python 2016. Au programme, de la magie avec python.
+links:
+  - type: http
+    text: Dive into Python3
+    link: http://www.diveintopython3.net/
+    source: Dive into Python
+    author: Mark Pilgrim
+  - type: http
+    text: Introduction to Programming in Python
+    link: http://introcs.cs.princeton.edu/python/home/
+    source: University of Princeton
+    author: Robert Sedgewick, Kevin Wayne, and Robert Dondero
+slides:
+  link: https://slides.atilla.org/python-2016/formation-2.pdf
+  git: https://gitlab.atilla.org/terrienale/slides_python_2016
