@@ -6,7 +6,6 @@ short: Une courte introduction au standard OpenPGP
 replay_id: -xruuWkvesQ
 authors:
   - caubin
-  - xer
 description: Dans ce talk, nous faisons une brève découverte de GPG, l'outil standard utilisé dans les systèmes GNU/Linux pour réaliser des chiffrements OpenPGP
 links:
 slides:
