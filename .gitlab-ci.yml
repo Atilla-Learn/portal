@@ -1,0 +1,35 @@
+before_script:
+  - id
+  - pwd
+
+stages:
+  - build
+  - deploy
+
+build:app:
+  stage: build
+  script:
+    - if [ ! -e venv/bin/activate ] ; then virtualenv -p $(which python3) venv; fi
+    - source venv/bin/activate
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - npm install bower
+    - python generate.py
+    - node_modules/bower/bin/bower install
+  artifacts:
+    paths:
+      - web/
+
+deploy:prod:
+  stage: deploy
+  dependencies:
+    - build:app
+  environment:
+    name: production
+    url: https://learn.atilla.org
+  only:
+    - master
+  script:
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRODUCTION_PRIVATE_KEY")
+    - rsync --checksum --recursive --delete --delete-during --itemize-changes --verbose web/ learn@webstatic-prod.prod.infra.atilla.org:~/website
