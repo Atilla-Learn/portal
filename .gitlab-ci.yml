@@ -15,7 +15,7 @@ build:app:
     - pip install -r requirements.txt
     - npm install bower
     - python generate.py
-    - node-modules/bower/bin/bower install
+    - node_modules/bower/bin/bower install
   artifacts:
     paths:
       - web/
