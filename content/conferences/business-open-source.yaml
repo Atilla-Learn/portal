@@ -1,0 +1,16 @@
+type: conference
+title: Comment monter un business Open Source ?
+date: 27/03/2017
+image: affiche-xwiki.png
+short: Ludovic Dubost nous montre comment il est aujourd'hui possible de monter un business autour d'un projet Open Source.
+replay_id: unknown
+authors:
+  - ldubost
+description: Ludovic Dubost, fondateur du projet Open Source XWiki et président d'XWiki SAS retrace dans cette conférence comment sa société basée sur le logiciel XWiki s'est développée au cours des 13 dernières années de zéro à deux millions d'euros de revenus, de façon éthique et responsable et sans investisseurs externes. Ludovic nous explique pourquoi développer un business «Open Source» est une chose importante et comment on peut le faire.
+links:
+  - type: http
+    text: Site du projet Open Source XWiki
+    link: http://xwiki.org
+  - type: http
+    text: Site d'XWiki SAS
+    link: http://xwiki.com
