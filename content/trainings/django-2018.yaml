@@ -1,0 +1,21 @@
+type: training
+title: Django quickstart
+date: 16/01/2018
+short: Django quickstart
+image: django-logo-positive.png
+authors:
+  - terrienale
+description: Séance de démarrage rapide pour Django. Au programme, toutes les bases de Django pour commencer sereinement.
+links:
+  - type: http
+    text: Sources de l'exemple
+    link: https://gitlab.atilla.org/terrienale/quickstart_django
+    source: ATILLA
+    author: Alexandre Terrien
+  - type: http
+    text: Documentation Django
+    link: https://docs.djangoproject.com/en/2.0/
+    source: Django Software Foundation
+slides:
+  link: https://terrien.io/slides_django.pdf
+  git: https://gitlab.atilla.org/terrienale/quickstart_django
