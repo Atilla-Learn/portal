@@ -13,8 +13,9 @@ import yaml
 class AtillaLearn:
     output_dir = 'web'
     authors_dir = 'content/authors'
-    items_dirs = map(lambda d: os.path.join('content', d), ['conferences', 'talks', 'trainings'])
+    items_dirs = map(lambda d: os.path.join('content', d), ['lives', 'conferences', 'talks', 'trainings'])
     templates_map = {
+        'live': 'live.html',
         'conference': 'conference.html',
         'talk': 'talk.html',
         'training': 'training.html',
@@ -40,6 +41,7 @@ class AtillaLearn:
                 universal_newlines=True
             ).strip(),
             'num': {
+                'lives': len([k for k, v in self.items.items() if v['type'] == 'live']),
                 'trainings': len([k for k, v in self.items.items() if v['type'] == 'training']),
                 'talks': len([k for k, v in self.items.items() if v['type'] == 'talk']),
                 'conferences': len([k for k, v in self.items.items() if v['type'] == 'conference']),
@@ -142,6 +144,8 @@ class AtillaLearn:
                     conferences[k] = v
                 elif v['type'] == 'training':
                     trainings[k] = v
+                elif v['type'] == 'live' :
+                    lives[k] = v
 
         # TODO: Reverse sorting
 
@@ -162,7 +166,7 @@ class AtillaLearn:
         datestr = time.strftime('%Y-%m-%d', time.gmtime())
         endpoints = [
             '{}.html'.format(page)
-            for page in ['conferences', 'trainings', 'talks'] + list(self.items.keys())
+            for page in ['live', 'conferences', 'trainings', 'talks'] + list(self.items.keys())
         ]
         pages = [
             {'url': self.build_url(endpoint), 'lastmod': datestr}
@@ -175,6 +179,7 @@ class AtillaLearn:
 
     def render(self):
         self.render_home()
+        self.render_landpage('live', 'lives.html', 'Lives')
         self.render_landpage('conference', 'conferences.html', 'Conférences')
         self.render_landpage('training', 'trainings.html', 'Formations')
         self.render_landpage('talk', 'talks.html', 'Talks')

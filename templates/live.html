@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}Live {{entry.title}}{% endblock %}
+{% block subtitle %}Lives > {{entry.title}}{% endblock %}
+
+
+{% block description %}
+{{ entry.short }}
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h3 class="yellow-text text-darken-2">{{ entry.title}}</h3>
+    <p class="flow-text">{{ entry.short }}</p>
+    {% if entry.replay_id %}
+    <div class="card-panel">
+      <div class="video-container center">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/{{ entry.replay_id }}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    {% endif %}
+    {% if entry.peertube_id %}
+      {% for peertube_video in peertube_id.items() %}
+        <div class="card-panel">
+          <div class="video-container center">
+            <iframe width="1280" height="720" src="https://peertube.atilla.org/videos/embed/{{ entry.peertube_video }}" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <div class="row">
+      <div class="col l7 s12">
+        <div class="card-panel teal">
+          <span class="white-text">
+            <h4>Description</h4>
+            {{ entry.description }}
+          </span>
+        </div>
+        {% if entry.links %}
+          <div class="card-panel">
+            <span class="black-text">
+              <h4>A voir</h4>
+              <ul class="collection">
+                {% for link in entry.links %}
+                  <li class="collection-item avatar">
+
+                    {% if link.type == 'video' %}
+                      <i class="material-icons circle">play_arrow</i>
+                    {% elif link.type == 'http' %}
+                      <i class="material-icons circle red">http</i>
+                    {% elif link.type == 'book' %}
+                      <i class="material-icons circle green">library_books</i>
+                    {% endif %}
+
+                    <span class="title">{{ link.text }}</span>
+                    <p>{{ link.source }}<br />{{ link.author }}</p>
+                    <a href="{{ link.link }}" class="secondary-content" target="_blank">
+                      <i class="material-icons">send</i></a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </span>
+          </div>
+        {% endif %}
+      </div>
+      <div class="col l5 s12">
+        <div class="card grey darken-3">
+          <div class="card-content white-text">
+            <span class="flow-text"><i class="fa fa-calendar-o"></i>  {{ entry.date }}</span>
+          </div>
+          {% if entry.slides %}
+            <div class="card-action">
+              <a href="{{ entry.slides.link }}" class="waves-effect yellow darken-1 waves-dark btn black-text text-darken-5">Voir les slides</a>
+              {% if entry.slides.git %}<a href="{{ entry.slides.git }}">(source)</a>{% endif %}
+            </div>
+          {% endif %}
+        </div>
+        <div class="row">
+          {% for author in authors.items() %}
+            <div class="col s6">
+              <div class="card">
+                <a href="{{author[0]}}.html">
+                  <div class="card-image">
+                    <img src="img/authors/{{ author[1].picture }}">
+                    <span class="card-title">{{ author[1].name }}</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col l12 s12">
+        <div class="card-panel">
+          <h4>Partagez sur les réseaux</h4>
+          <buttom class="waves-effect waves-light btn-large indigo darken-4 share-fb" data-url="{{ meta.url }}"><i class="fa fa-facebook left"></i>Facebook</buttom>
+          <buttom class="waves-effect waves-light btn-large blue darken-1 share-twitter" data-url="{{ meta.url }}"><i class="fa fa-twitter left"></i>Twitter</buttom>
+          <buttom class="waves-effect waves-light btn-large red darken-4 share-gp" data-url="{{ meta.url }}"><i class="fa fa-google-plus left"></i>Google +</buttom>
+          <buttom class="waves-effect waves-light btn-large blue darken-4 share-linkedin" data-url="{{ meta.url }}"><i class="fa fa-linkedin left"></i>Linkedin</buttom>          <!-- <a class="waves-effect waves-light btn-large"><i class="fa fa-link left"></i>Lien</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

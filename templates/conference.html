@@ -19,13 +19,15 @@
       </div>
     </div>
     {% endif %}
-    {% if entry.peertube_id %}
-    <div class="card-panel">
-      <div class="video-container center">
-        <iframe width="1280" height="720" src="https://peertube.atilla.org/videos/embed/{{ entry.peertube_id }}" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-    {% endif %}
+    {% for peertube_video in peertube_id.items() %}
+      {% if entry.peertube_id %}
+        <div class="card-panel">
+          <div class="video-container center">
+            <iframe width="1280" height="720" src="https://peertube.atilla.org/videos/embed/{{ entry.peertube_video }}" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
     <div class="row">
       <div class="col l7 s12">
         <div class="card-panel teal">

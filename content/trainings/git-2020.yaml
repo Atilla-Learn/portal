@@ -1,0 +1,11 @@
+type: training
+title: Formation Git 2020
+date: 12/05/2020
+image: git-2020.jpg
+short: Formation sur l'outil de versionning et de gestion de projet.
+peertube_id : 
+  - e2b7ba23-e7df-410e-a7ae-27321214d7aa
+authors:
+  - moraujosse
+  - sasportesj
+description: Beaucoup d'entre vous veulent apprendre à gérer leurs différents projet, et à se faciliter le travail notamment en groupe. C'est l'objet de cette formation.

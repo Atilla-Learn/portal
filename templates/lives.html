@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Les lives{% endblock %}
+{% block subtitle %}Lives{% endblock %}
+
+
+{% block description %}
+Liste des lives de révision proposés par ATILLA
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <h3 class="yellow-text text-darken-2">{{ landpage_title }}</h3>
+
+      {% if entries %}
+        <p class="flow-text">
+            Vous trouverez ici tous les lives de révisions précédemment préparés. Plein d'amour et bonnes révisions !
+        </p>
+
+        {% for slug, entry in entries.items() %}
+          {% include 'includes/item.html' %}
+        {% endfor %}
+      {% else %}
+        {% include 'includes/empty.html' %}
+      {% endif %}
+
+    </div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://atilla.org/lives.html",
+          "name": "Lives"
+        }
+      }]
+    }
+    </script>
+
+{% endblock %}
