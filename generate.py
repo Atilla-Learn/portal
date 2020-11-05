@@ -134,7 +134,7 @@ class AtillaLearn:
 
     def render_author(self, entry):
         template = self.env.get_template('author.html')
-        talks, conferences, trainings = {}, {}, {}
+        lives, talks, conferences, trainings = {}, {}, {}, {}
 
         for k,v in self.items.items():
             if entry[0] in v['authors']:
