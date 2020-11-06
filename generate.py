@@ -73,7 +73,7 @@ class AtillaLearn:
         template = self.env.get_template('index.html')
         with open(os.path.join(self.output_dir, 'index.html'), 'w', encoding="utf-8") as f:
             f.write(template.render(
-                title='Atilla Learn',
+                title='ATILLA Learn',
                 meta={'url': self.build_url(), 'image': self.default_image},
                 **self.common_dict
             ))
@@ -152,6 +152,7 @@ class AtillaLearn:
         with open(os.path.join(self.output_dir, entry[0] + '.html'), 'w', encoding="utf-8") as f:
             f.write(template.render(
                 author = entry[1],
+                lives = lives,
                 talks = talks,
                 conferences = conferences,
                 trainings = trainings,

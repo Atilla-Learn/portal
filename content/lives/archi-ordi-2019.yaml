@@ -1,7 +1,7 @@
 type: live
 title: Architecture des ordinateurs 2019
-date: 10/05/2020
-image: live-archi-ordi-2019
+date: 10/05/2019
+image: live-archi-ordi-2019.jpg
 short: Live d'architecture des ordinateurs 2018-2019
 peertube_id:
   - c9e58112-40d4-4a63-9959-63494f7b6e2d
@@ -10,3 +10,7 @@ authors:
   - durifmeuni
   - sasportesj
 description: Live d'architecture des ordinateurs (en deux parties), dernier live GI de l'année scolaire 2018-2019
+keywords: 
+  - formation: ING1
+  - cursus: Génie Informatique
+  - category: Informatique

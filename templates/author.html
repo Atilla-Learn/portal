@@ -13,11 +13,23 @@ Liste des conférenciers/formateurs sans qui tout ceci ne serait rien &lt;3
     <div class="row">
       <div class="col s12 m9">
         <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title"><h4>{{ author.name }}</h4></span>
-              <p>{{ author.email }}</p>
-            </div>
+          <div class="card-content white-text">
+            <span class="card-title"><h4>{{ author.name }}</h4></span>
+            <p>{{ author.email }}</p>
           </div>
+          {% if author.more %}
+            <div class="card-content white darken-1">
+              {% if author.more.formation %}
+                <b>Formation : </b>{{ author.more.formation }}
+                <br/>
+              {% endif %}
+              {% if author.more.description %}
+                <b>Description : </b> {{ author.more.description }}
+                <br/>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
       </div>
 
       <div class="col s12 m3">
@@ -26,9 +38,31 @@ Liste des conférenciers/formateurs sans qui tout ceci ne serait rien &lt;3
               <img class="responsive-img" src="img/authors/{{ author.picture }}">
             </div>
           </div>
-
       </div>
     </div>
+
+    {% if lives %}
+      <h3>Lives</h3>
+      <div class="row">
+        {% for name, live in lives.items() %}
+          <div class="col s12 m6">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="img/{{ live.image }}">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{ live.title }}<i class="material-icons right">more_vert</i></span>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">{{ live.title }}<i class="material-icons right">close</i></span>
+                <p>{{ live.description }}</p>
+                <p><a href="{{ name }}.html">Voir le live</a></p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
 
     {% if talks %}
       <h3>Talks</h3>
@@ -52,8 +86,6 @@ Liste des conférenciers/formateurs sans qui tout ceci ne serait rien &lt;3
           {% endfor %}
         </div>
     {% endif %}
-
-
     
     {% if conferences %}
       <h3>Conférences</h3>
