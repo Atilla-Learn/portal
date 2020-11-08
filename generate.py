@@ -98,6 +98,21 @@ class AtillaLearn:
                 key=lambda x: x[1]['name']
             ))
 
+        dict_ = self.common_dict.copy()
+
+        if (type_ == 'live'):
+            keywordsDict = {}
+            for e in entries:
+                keywordsList = entries[e]["keywords"]
+                for object_ in keywordsList:
+                    key = list(object_.keys())[0]
+                    value = object_[key]
+                    if key in keywordsDict:
+                        if value not in keywordsDict[key]: keywordsDict[key].append(value)
+                    else :
+                        keywordsDict[key] = [value]
+            dict_['keywordsDict'] = keywordsDict
+
         template = self.env.get_template(filename)
         with open(os.path.join(self.output_dir, filename), 'w', encoding="utf-8") as f:
             f.write(template.render(
@@ -105,7 +120,7 @@ class AtillaLearn:
                 title=title,
                 entries=entries,
                 meta={'url': self.build_url(filename), 'image': self.default_image},
-                **self.common_dict
+                **dict_
             ))
 
     def render_item(self, slug, entry):

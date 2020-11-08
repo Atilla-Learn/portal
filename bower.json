@@ -9,6 +9,6 @@
   "moduleType": [],
   "license": "MIT",
   "dependencies": {
-    "Materialize": "materialize#0.97.0"
+    "Materialize": "materialize#0.100.2"
   }
 }

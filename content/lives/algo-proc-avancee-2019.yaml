@@ -10,6 +10,6 @@ authors:
   - sasportesj
 description: Live d'algorithmique procédurale avancée de l'année scolaire 2018-2019
 keywords:
-  - formation: ING1
-  - cursus: Génie Informatique
-  - category: Informatique
+  - formation: ing1
+  - cursus: genie-informatique
+  - category: mathematiques

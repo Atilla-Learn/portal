@@ -10,6 +10,6 @@ authors:
   - sasportesj
 description: Live de théorie de l'information de l'année scolaire 2018-2019
 keywords:
-  - year: ING1
-  - formation: Génie Informatique
-  - category: Mathématiques
+  - formation: ing1
+  - cursus: genie-informatique
+  - category: mathematiques

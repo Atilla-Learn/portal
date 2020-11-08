@@ -48,12 +48,12 @@
             <span class="yellow-text text-darken-2">>~/</span>Learn
           </a>
 
-          <ul style="width:240px;">
-            <li><a class="flow-text" href="lives.html">Lives <span class="badge">{{ num.lives }}</span></a></li>
-            <li><a class="flow-text" href="trainings.html">Formations <span class="badge">{{ num.trainings }}</span></a></li>
-            <li><a class="flow-text" href="talks.html">Talks <span class="badge">{{ num.talks }}</span></a></li>
-            <li><a class="flow-text" href="conferences.html">Conférences <span class="badge">{{ num.conferences }}</span></a></li>
-            <li><a class="flow-text" href="authors.html">Auteurs <span class="badge">{{ num.authors }}</span></a></li>
+          <ul>
+            <li class="learn-nav-item"><a class="flow-text" href="lives.html">Lives <span class="badge">{{ num.lives }}</span></a></li>
+            <li class="learn-nav-item"><a class="flow-text" href="trainings.html">Formations <span class="badge">{{ num.trainings }}</span></a></li>
+            <li class="learn-nav-item"><a class="flow-text" href="conferences.html">Conférences <span class="badge">{{ num.conferences }}</span></a></li>
+            <li class="learn-nav-item"><a class="flow-text" href="talks.html">Talks <span class="badge">{{ num.talks }}</span></a></li>
+            <li class="learn-nav-item"><a class="flow-text" href="authors.html">Auteurs <span class="badge">{{ num.authors }}</span></a></li>
           </ul>
 
           <div class="partners center">
@@ -101,8 +101,8 @@
             <ul>
               <li><a class="grey-text text-lighten-3" href="lives.html">Lives</a></li>
               <li><a class="grey-text text-lighten-3" href="trainings.html">Formations</a></li>
-              <li><a class="grey-text text-lighten-3" href="talks.html">Talks</a></li>
               <li><a class="grey-text text-lighten-3" href="conferences.html">Conférences</a></li>
+              <li><a class="grey-text text-lighten-3" href="talks.html">Talks</a></li>
               <li><a class="grey-text text-lighten-3" href="authors.html">Auteurs</a></li>
             </ul>
           </div>
@@ -119,14 +119,16 @@
 
 
     {# Script #}
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="vendor/Materialize/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
 
     {% block script %}{% endblock %}
 
     <script type="text/javascript">
-         $(".button-collapse").sideNav();
+        $(document).ready(function(){
+          $(".button-collapse").sideNav();
+        });
     </script>
 
 
