@@ -36,6 +36,17 @@ $ bower install
 * Please bear in mind that the author picture will be fetched in the
   `web/img/authors/` directory.
 
+* Option : the author can add its formation and a description :
+
+    ```
+    name: Complete Name
+    email: some@email.com
+    picture: mdr.png
+    more:
+      formation: My awesome formation
+      description: Description of my awesome self
+    ```
+
 # How to add a training/talk/conference
 
 * Add the right `.yaml` entry in the concerned subfolder of `content/`
@@ -49,6 +60,37 @@ $ bower install
     image: lololol.png # will be printed out in the item list, and fetched in web/img/
     short: a short and catchy summary for the talk/conf/..
     replay_id: a Youtube ID for the replay (or nothing if there's none)
+    authors:
+      - author1
+      - author2
+    description: a full description
+    links:
+      - type: video, or http, or book
+        text: link text
+        link: proper link
+        source: youtube, NASA, whatever
+        author: you know the drill
+    slides:
+      link: http://link_to_online_version_of_slides.com
+      git: http://link_to_source_of_slides.org
+    ```
+# How to add a live
+
+* Add the right `.yaml` entry in the concerned subfolder of `content/`
+* The name of the file doesn't really matter
+* The file should respect the following schema:
+
+    ```
+    type: live
+    title: A title
+    date: the date of the item
+    image: lololol.png # will be printed out in the item list, and fetched in web/img/
+    short: a short and catchy summary for the live
+    replay_id: ID of the Youtube video, if there is one
+    peertube_id: 
+      - the ID of the Peertube video
+      - the ID of the second part of the live if needed
+      - will you really need a third part ? If so, you can put its ID here
     authors:
       - author1
       - author2
