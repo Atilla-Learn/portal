@@ -95,6 +95,11 @@ $ bower install
       - author1
       - author2
     description: a full description
+    keywords:
+      - formation: ing1/ing2/ing3
+      - cursus: genie-informatique/genie-mathematiques/you know what I'm talking about
+      - category: informatique/mathematiques/other(you can be specific)
+      - another type of keyword if you feel the need to add it
     links:
       - type: video, or http, or book
         text: link text
@@ -105,3 +110,7 @@ $ bower install
       link: http://link_to_online_version_of_slides.com
       git: http://link_to_source_of_slides.org
     ```
+
+* Please keep in mind that you can add as many keywords as you want, but that
+* keywords label must each have the structure of a css class as it will
+* affect the filter (ex : Génie Informatique >> genie-informatique)
