@@ -1,8 +1,8 @@
 type: live
-title: Contrôle gestion 2020
+title: Contrôle de gestion 2020
 date: 14/12/2020
 image: live-controle-gestion-2020.jpg
-short: Live de controle gestion 2020-2021
+short: Live de controle de gestion 2020-2021
 peertube_id:
   - 38179df7-156c-4498-9008-b8231a7ec6f2
 authors:
@@ -11,4 +11,4 @@ description: Live de controle de gestion de l'année scolaire 2020-2021
 keywords:
   - formation: ing1
   - cursus: transverse
-  - category: économie 
+  - category: economie 

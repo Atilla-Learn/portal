@@ -1,7 +1,7 @@
 type: live
 title: Statistiques inférentielles 2019
 date: 14/12/2019
-image: live-statistiques-inférentielles-2019.jpg
+image: live-statistiques-inferentielles-2019.jpg
 short: Live de statistiques inférentielles 2019-2020
 peertube_id:
   - 2ea5f2ff-e369-4d8e-a008-2862dde9969f
@@ -13,4 +13,4 @@ description: Live de statistiques inférentielles de l'année scolaire 2019-2020
 keywords:
   - formation: ing2
   - cursus: transverse
-  - category: mathématique 
+  - category: mathematique 
