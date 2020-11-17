@@ -13,8 +13,9 @@ import yaml
 class AtillaLearn:
     output_dir = 'web'
     authors_dir = 'content/authors'
-    items_dirs = map(lambda d: os.path.join('content', d), ['conferences', 'talks', 'trainings'])
+    items_dirs = map(lambda d: os.path.join('content', d), ['lives', 'conferences', 'talks', 'trainings'])
     templates_map = {
+        'live': 'live.html',
         'conference': 'conference.html',
         'talk': 'talk.html',
         'training': 'training.html',
@@ -40,6 +41,7 @@ class AtillaLearn:
                 universal_newlines=True
             ).strip(),
             'num': {
+                'lives': len([k for k, v in self.items.items() if v['type'] == 'live']),
                 'trainings': len([k for k, v in self.items.items() if v['type'] == 'training']),
                 'talks': len([k for k, v in self.items.items() if v['type'] == 'talk']),
                 'conferences': len([k for k, v in self.items.items() if v['type'] == 'conference']),
@@ -57,21 +59,21 @@ class AtillaLearn:
         for authorfile in os.listdir(self.authors_dir):
             if authorfile.endswith('.yaml'):
                 with open(os.path.join(self.authors_dir, authorfile), encoding="utf-8") as f:
-                    self.authors[authorfile.split('.')[0]] = yaml.load(f.read())
+                    self.authors[authorfile.split('.')[0]] = yaml.load(f.read(), Loader=yaml.FullLoader)
 
     def collect_items(self):
         for dir_ in self.items_dirs:
             for item_file in os.listdir(dir_):
                 if item_file.endswith('.yaml'):
                     with open(os.path.join(dir_, item_file), encoding="utf-8") as f:
-                        d = yaml.load(f.read())
+                        d = yaml.load(f.read(), Loader=yaml.FullLoader)
                         self.items[slugify(item_file.split('.')[0])] = d
 
     def render_home(self):
         template = self.env.get_template('index.html')
         with open(os.path.join(self.output_dir, 'index.html'), 'w', encoding="utf-8") as f:
             f.write(template.render(
-                title='Atilla Learn',
+                title='ATILLA Learn',
                 meta={'url': self.build_url(), 'image': self.default_image},
                 **self.common_dict
             ))
@@ -96,6 +98,21 @@ class AtillaLearn:
                 key=lambda x: x[1]['name']
             ))
 
+        dict_ = self.common_dict.copy()
+
+        if (type_ == 'live'):
+            keywordsDict = {}
+            for e in entries:
+                keywordsList = entries[e]["keywords"]
+                for object_ in keywordsList:
+                    key = list(object_.keys())[0]
+                    value = object_[key]
+                    if key in keywordsDict:
+                        if value not in keywordsDict[key]: keywordsDict[key].append(value)
+                    else :
+                        keywordsDict[key] = [value]
+            dict_['keywordsDict'] = keywordsDict
+
         template = self.env.get_template(filename)
         with open(os.path.join(self.output_dir, filename), 'w', encoding="utf-8") as f:
             f.write(template.render(
@@ -103,7 +120,7 @@ class AtillaLearn:
                 title=title,
                 entries=entries,
                 meta={'url': self.build_url(filename), 'image': self.default_image},
-                **self.common_dict
+                **dict_
             ))
 
     def render_item(self, slug, entry):
@@ -132,7 +149,7 @@ class AtillaLearn:
 
     def render_author(self, entry):
         template = self.env.get_template('author.html')
-        talks, conferences, trainings = {}, {}, {}
+        lives, talks, conferences, trainings = {}, {}, {}, {}
 
         for k,v in self.items.items():
             if entry[0] in v['authors']:
@@ -142,12 +159,15 @@ class AtillaLearn:
                     conferences[k] = v
                 elif v['type'] == 'training':
                     trainings[k] = v
+                elif v['type'] == 'live' :
+                    lives[k] = v
 
         # TODO: Reverse sorting
 
         with open(os.path.join(self.output_dir, entry[0] + '.html'), 'w', encoding="utf-8") as f:
             f.write(template.render(
                 author = entry[1],
+                lives = lives,
                 talks = talks,
                 conferences = conferences,
                 trainings = trainings,
@@ -162,7 +182,7 @@ class AtillaLearn:
         datestr = time.strftime('%Y-%m-%d', time.gmtime())
         endpoints = [
             '{}.html'.format(page)
-            for page in ['conferences', 'trainings', 'talks'] + list(self.items.keys())
+            for page in ['live', 'conferences', 'trainings', 'talks'] + list(self.items.keys())
         ]
         pages = [
             {'url': self.build_url(endpoint), 'lastmod': datestr}
@@ -175,6 +195,7 @@ class AtillaLearn:
 
     def render(self):
         self.render_home()
+        self.render_landpage('live', 'lives.html', 'Lives')
         self.render_landpage('conference', 'conferences.html', 'Conférences')
         self.render_landpage('training', 'trainings.html', 'Formations')
         self.render_landpage('talk', 'talks.html', 'Talks')

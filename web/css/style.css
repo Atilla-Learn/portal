@@ -4,22 +4,26 @@ body {
   flex-direction: column;
 }
 
+.side-nav {
+  width: 240px;
+}
 
 .side-nav.fixed a {
   font-weight: 800;
+  display: block;
 }
 
 @media(min-width:992px) {
   .side-nav.fixed .partners {
     position: fixed;
-    bottom: 0;
+    bottom: 5em;
     margin-left: 55px;
   }
 }
 
 
 .side-nav.fixed .partners img {
-  height: 75px;
+  height: 70px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -59,6 +63,9 @@ main, footer {
   font-size: 30px !important;
   color: white !important;
   font-weight: 300 !important;
+  padding: 0 15px;
+  height: 64px;
+  line-height: 64px;
 }
 
 nav .brand-logo {
@@ -87,4 +94,19 @@ nav .brand-logo {
 
 .img-item img {
   max-height: 200px; 
+}
+
+.learn-nav-item > .flow-text {
+  line-height: 64px;
+  height: 64px;
+}
+
+.flow-text > span.badge {
+  margin: 0;
+  line-height: inherit;
+  height: inherit;
+}
+
+.multiple-select-dropdown label {
+  top: -10px !important;
 }

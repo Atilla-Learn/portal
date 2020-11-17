@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}Les lives{% endblock %}
+{% block subtitle %}Lives{% endblock %}
+
+
+{% block description %}
+Liste des lives de révision proposés par ATILLA
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <h3 class="yellow-text text-darken-2">{{ landpage_title }}</h3>
+      {% if entries %}
+        <p class="flow-text">
+            Vous trouverez ici tous les lives de révisions précédemment préparés. Plein d'amour et bonnes révisions !
+        </p>
+
+        <div class="input-field col s12">
+          <select id="select-tag" name="select-tags" multiple>
+            <option value="" disabled>Choisir un filtre</option>
+            {% for k in keywordsDict.keys() %}
+              <optgroup label="{{ k }}">
+                {% for element in keywordsDict[k] %}
+                  <option class="options" value="{{ element }}"> {{ element }}</option>
+                {% endfor %}
+              </optgroup>
+            {% endfor %}
+          </select>
+        </div>
+
+        <p>
+          <h5>
+            <b><span id="results-found">{{ num.lives }}</span></b> résultat(s) trouvé(s)
+          </h5>
+        </p>
+
+        {% for slug, entry in entries.items() %}
+          {% include 'includes/item.html' %}
+        {% endfor %}
+      {% else %}
+        {% include 'includes/empty.html' %}
+      {% endif %}
+
+    </p>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://atilla.org/lives.html",
+          "name": "Lives"
+        }
+      }]
+    }
+    </script>
+    {% block script %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="vendor/Materialize/dist/js/materialize.min.js"></script>
+      <script>
+        $(document).ready(function(){
+          $("select").material_select();
+          $(".caret").remove();
+          $("#select-tag").val("")
+        });
+
+        $('#select-tag').change(function() {
+          var list = $(this).val();
+          for (var i = 0 ; i < list.length ; i++) {
+            list[i] = '.' + list[i]
+          }
+          var classes = list.join('')
+          $('.live-item').css("display", "")
+          if (classes != '') {
+            $(".live-item").not(classes).each(function(index, value) {
+              $(value).css("display", "none")
+            })
+          }
+          var resultsFound = $(".live-item").filter(classes).length || $(".live-item").length
+          $("#results-found").html(resultsFound)
+        })
+
+      </script>
+    {% endblock %}
+
+{% endblock %}
