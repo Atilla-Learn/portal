@@ -1,6 +1,6 @@
 type: live
 title: Statistiques inférentielles 2019
-date: 14/12/2019
+date: 09/12/2019
 image: live-statistiques-inferentielles-2019.jpg
 short: Live de statistiques inférentielles 2019-2020
 peertube_id:
@@ -8,7 +8,6 @@ peertube_id:
 authors:
   - davidsonco
   - durifmeuni
-  - sasportesj
 description: Live de statistiques inférentielles de l'année scolaire 2019-2020
 keywords:
   - formation: ing2
