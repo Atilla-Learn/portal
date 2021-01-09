@@ -13,6 +13,13 @@ $ python generate.py
 $ bower install
 ```
 
+* Then to start a php server in order to see the website
+```
+$ cd web
+$ php -S localhost:8000
+```
+And go localhost:8000 on a web navigator
+
 # Structure of the repo
 
 * `content/` author files and item files (each item is either a conf, a talk, or a training)
