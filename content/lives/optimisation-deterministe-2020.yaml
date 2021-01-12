@@ -1,0 +1,14 @@
+type: live
+title: Optimisation Déterministe 2020
+date: 10/12/2020
+image: live-optimisation-deterministe-2020.jpg
+short: Live d'optimisation déterministe 2020-2021
+peertube_id:
+  - c3af5718-2cc7-4a46-93c6-a54b3e621be6
+authors:
+  - ricouguill
+description: Live d'optimisation déterministe de l'année scolaire 2020-2021. Attention, il y a un cafouillage dans le live, si une fonction quadratique admet un extremum, il est atteint en -A^(-1)*b.
+keywords:
+  - formation: ing2
+  - cursus: genie-mathematique
+  - category: mathematiques

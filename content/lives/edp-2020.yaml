@@ -1,0 +1,14 @@
+type: live
+title: EDP 2020
+date: 11/12/2020
+image: live-edp-2020.jpg
+short: Live d'EDP 2020-2021
+peertube_id:
+  - c93d3583-dd6b-4fc9-8181-20255b2e7500
+authors:
+  - ricouguill
+description: Live d'équations différentielles aux dérivées partielles de l'année scolaire 2020-2021
+keywords:
+  - formation: ing2
+  - cursus: genie-mathematique
+  - category: mathematiques
