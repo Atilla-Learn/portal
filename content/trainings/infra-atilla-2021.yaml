@@ -1,0 +1,13 @@
+type: training
+title: Présentation infrastructure réseau d'ATILLA 2021
+date: 08/02/2021
+image: infra-atilla-2021.jpg
+short: Formation sur l'infrastructure réseau d'ATILLA
+peertube_id : 
+  - 1cc89659-6c00-4217-9171-e35510b7fcad
+authors:
+  - caubin
+  - sasportesj
+description: Formation sur l'infrastructure réseau d'ATILLA, pour découvrir comment est construit un réseau ou pour devenir admin sys !
+slides:
+  link: https://slides.atilla.org/infra-atilla-2021.pdf

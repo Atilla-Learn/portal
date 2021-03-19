@@ -1,0 +1,12 @@
+type: training
+title: Formation C++
+date: 22/02/2021
+image: cpp-2021.jpg
+short: Formation C++
+peertube_id : 
+  - 0268271a-e079-4109-bd8c-49db25caf64a
+authors:
+  - moraujosse
+description: Formation pour apprendre les bases du C++ en ayant quelques bases de C et de POO
+slides:
+  link: https://slides.atilla.org/cpp-2021.pdf
