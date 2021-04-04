@@ -10,3 +10,4 @@ authors:
 description: Formation pour apprendre les bases du C++ en ayant quelques bases de C et de POO
 slides:
   link: https://slides.atilla.org/cpp-2021.pdf
+  git: https://gitlab.atilla.org/ricouguill/formationcpp
