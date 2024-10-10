@@ -7,10 +7,10 @@ peertube_id:
   - c9e58112-40d4-4a63-9959-63494f7b6e2d
   - 78e8b77a-0792-4180-9c9c-d272e9571907
 authors:
-  - durifmeuni
   - sasportesj
+  - durifmeuni
 description: Live d'architecture des ordinateurs (en deux parties), dernier live GI de l'année scolaire 2018-2019
-keywords: 
+keywords:
   - formation: ing1
   - cursus: genie-informatique
   - category: informatique

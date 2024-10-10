@@ -1,0 +1,15 @@
+type: live
+title: Programmation procédurale 2022
+date: 06/01/2022
+image: live-programmation-procedurale-2022.jpg
+short: Live de programmation procédurale 2021-2022
+peertube_id:
+  - e7dcff82-19fb-4197-8f94-59f0d8999ac7
+authors:
+  - grandellou
+  - oulhenjule
+description: Live de programmation procédurale (en C) de l'année 2021-2022
+keywords:
+  - formation: ing1
+  - cursus: transverse
+  - category: informatique

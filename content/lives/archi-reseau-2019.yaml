@@ -7,10 +7,10 @@ peertube_id:
   - 8f8a55d5-bbb3-4cd4-be54-8941a21d052c
   - 38d254f8-8a01-4092-bacc-2cf12e054b7a
 authors:
-  - durifmeuni
   - sasportesj
+  - durifmeuni
 description: Live d'architecture réseau de l'année scolaire 2019-2020
-keywords: 
+keywords:
   - formation: ing2
   - cursus: transverse
   - category: informatique
