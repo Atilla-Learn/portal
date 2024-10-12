@@ -6,8 +6,8 @@ short: Live de programmation procédurale 2020-2021
 peertube_id:
   - b69e8570-598c-432a-bf32-03ede321a543
 authors:
-  - julientheo
   - gontiemarg
+  - julientheo
 description: Live de programmation procédurale (en C) de l'année 2020-2021
 keywords:
   - formation: ing1

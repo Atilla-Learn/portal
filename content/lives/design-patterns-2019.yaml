@@ -6,10 +6,10 @@ short: Live de design patterns 2019-2020
 peertube_id:
   - 2d8043ac-bc5e-4cdc-8db1-dacd79d7b596
 authors:
-  - davidsonco
   - lachaussee
+  - davidsonco
 description: Live de design patterns de l'année scolaire 2019-2020
-keywords: 
+keywords:
   - formation: ing2
   - cursus: genie-informatique
   - category: informatique
