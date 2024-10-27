@@ -1,0 +1,11 @@
+type: training
+title: Formation Tekiens.net
+date: 16/10/2024
+image: training-tekiens.jpg
+short: Formation Tekiens.net
+peertube_id :
+  - c852bf56-5041-4dc7-98b9-092b5c7805ab
+authors:
+  - grandellou
+  - frickkevin
+description: Présentation de tekiens.net et de ses fonctionnalités. Détails pour rejoindre et aider au développement du projet.

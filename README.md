@@ -9,7 +9,7 @@ Python-generated static website, with `materialize.css` design.
 $ virtualenv -p `which python3` venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
-$ python generate.py
+$ python3 generate.py
 $ bower install
 ```
 
@@ -67,6 +67,8 @@ And go localhost:8000 on a web navigator
     image: lololol.png # will be printed out in the item list, and fetched in web/img/
     short: a short and catchy summary for the talk/conf/..
     replay_id: a Youtube ID for the replay (or nothing if there's none)
+    peertube_id : 
+      - the ID of the Peertube video if there is one
     authors:
       - author1
       - author2

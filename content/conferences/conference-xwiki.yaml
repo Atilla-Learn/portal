@@ -1,0 +1,17 @@
+type: conference
+title: L'Open Source, une forme de travail éthique ?
+date: 01/01/2021
+image: conference-xwiki.jpg
+short: Conférence de Clément Aubin sur l'open source et son expérience
+peertube_id :
+  - 5221e32e-4d79-476d-8432-dc5eb0f8fa28
+authors:
+  - caubin
+description: Clément Aubin nous partage son parcours, son expérience avec l'Open Source, et plus encore.
+links:
+  - type: http
+    text: Site du projet Open Source XWiki
+    link: http://xwiki.org
+  - type: http
+    text: Site d'XWiki SAS
+    link: http://xwiki.com
