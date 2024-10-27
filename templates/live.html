@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block title %}Live {{entry.title}}{% endblock %}
-{% block subtitle %}Lives > {{entry.title}}{% endblock %}
+{% block subtitle %}
+  <a href="lives.html" class="brand-logo-element">Lives</a> > {{entry.title}}
+{% endblock %}
 
 
 {% block description %}
