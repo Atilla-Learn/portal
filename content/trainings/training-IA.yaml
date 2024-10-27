@@ -1,0 +1,10 @@
+type: training
+title: Formation IA
+date: 01/01/2022
+image: training-IA.jpg
+short: Formation IA
+peertube_id :
+  - 35ecdc8e-1856-4cda-9a6e-c06de7e6393a
+authors:
+  - danguilhen
+description: Fomation pour introduire aux principes de deep learning. Pas trop de code, le but est d'avoir une idée générale du fonctionnement et de ce qu'il est possible de faire.
