@@ -1,0 +1,16 @@
+type: training
+title: Formation Godot
+date: 17/10/2024
+image: training-godot.jpg
+short: Formation Godot
+peertube_id :
+  - 4c62b951-7a8b-4ae0-bac9-977a71e64918
+authors:
+  - delamottec
+description: Formation sur le moteur de jeu gratuit et open-source Godot. Dans le live, vous trouverez les différentes composantes essentielles du moteur pour réaliser votre propre jeu avec une section dédiée aux jeux multijoueurs.
+links:
+  - type: http
+    text: template de la formation
+    link: https://github.com/KuroMento/Template_Godot
+    source: ATILLA
+    author: Clément Delamotte
