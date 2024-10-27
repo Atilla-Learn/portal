@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block title %}Les conférenciers{% endblock %}
-{% block subtitle %}Auteurs > {{ author.name }} {% endblock %}
+{% block subtitle %}
+  <a href="authors.html" class="brand-logo-element">Auteurs</a> > {{ author.name }}
+{% endblock %}
 
 
 {% block description %}

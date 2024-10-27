@@ -68,6 +68,14 @@ main, footer {
   line-height: 64px;
 }
 
+.brand-logo-element {
+  font-size: 25px !important;
+  color: grey !important;
+  font-weight: 300 !important;
+  height: 64px;
+  line-height: 64px;
+}
+
 nav .brand-logo {
   color: grey !important;
   font-size: 25px !important;

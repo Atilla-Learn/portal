@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block title %}Formation {{ entry.title }}{% endblock %}
-{% block subtitle %}Formations > {{ entry.title }}{% endblock %}
+{% block subtitle %}
+  <a href="trainings.html" class="brand-logo-element">Formations</a> > {{ entry.title }}
+{% endblock %}
 
 
 {% block description %}
