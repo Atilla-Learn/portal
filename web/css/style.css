@@ -72,8 +72,13 @@ main, footer {
   font-size: 25px !important;
   color: grey !important;
   font-weight: 300 !important;
-  height: 64px;
-  line-height: 64px;
+}
+
+.in-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
 }
 
 nav .brand-logo {
@@ -101,7 +106,15 @@ nav .brand-logo {
 }
 
 .img-item img {
-  max-height: 200px; 
+  max-height: 200px;
+}
+
+@media only screen and (max-width: 601px) {
+  .img-item,
+  .date,
+  .name {
+    text-align: center;
+  }
 }
 
 .learn-nav-item > .flow-text {
@@ -117,4 +130,8 @@ nav .brand-logo {
 
 .multiple-select-dropdown label {
   top: -10px !important;
+}
+
+.margin-bottom {
+  margin-bottom: 5px;
 }

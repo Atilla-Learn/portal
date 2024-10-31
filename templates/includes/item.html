@@ -8,18 +8,18 @@
   <div class="row">
     <a class="col m10 s12" href="{{slug}}.html">
       <div class="card-panel no-padding row z-depth-1 hoverable black-text">
-        <div class="col s4 img-item">
+        <div class="col s12 m4 img-item">
           <img src="img/{{ entry.image }}" class="responsive-img"/>
         </div>
-        <div class="col s8">
+        <div class="col s12 m8">
           <h4 class="date">
-              <i class="fa fa-calendar-o"></i> {{ entry.date }}
-              {% if entry.replay_id %}
-                  <i class="fa fa-video-camera"></i>
-              {% endif %}
-              {% if entry.peertube_id %}
-                  <i class="fa fa-video-camera"></i>
-              {% endif %}
+            <i class="fa fa-calendar-o"></i> {{ entry.date }}
+            {% if entry.replay_id %}
+              <i class="fa fa-video-camera"></i>
+            {% endif %}
+            {% if entry.peertube_id %}
+              <i class="fa fa-video-camera"></i>
+            {% endif %}
           </h4>
           <h2 class="name">{{ entry.title }}</h2>
           <p>{{ entry.short }}</p>
@@ -27,6 +27,6 @@
       </div>
     </a>
   </div>
-{% if entry.type == "live" %}
+  {% if entry.type == "live" %}
     </div>
-{% endif %}
+  {% endif %}
