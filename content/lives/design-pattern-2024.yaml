@@ -14,5 +14,5 @@ keywords:
   - category: informatique
 links:
   - type: http
-    text: Site de ressources
+    text: refactoring.guru, ressource pour comprendre les design patterns
     link: https://refactoring.guru/design-patterns/catalog
