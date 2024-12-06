@@ -1,0 +1,18 @@
+type: live
+title: Design Pattern 2024
+date: 05/12/2024
+image: live-design-pattern-2024.jpg
+short: Live de design pattern 2024-2025
+peertube_id:
+  - 8273df75-e306-4291-a74f-1057366e420e
+authors:
+  - fromentinr
+description: Live de design pattern de l'année 2024-2025
+keywords:
+  - formation: ing2
+  - cursus: genie-informatique
+  - category: informatique
+links:
+  - type: http
+    text: Site de ressources
+    link: https://refactoring.guru/design-patterns/catalog
