@@ -1,0 +1,16 @@
+type: training
+title: Formation Git
+date: 23/01/2025
+image: training-git.png
+short: Formation sur l'outil de versionning et de gestion de projet Git.
+peertube_id :
+  - bd6cd78b-7bf3-44e7-b4af-b92a9b870197
+authors:
+  - mendynicol
+description: Formation sur Git, pour vous aider à gérer vos projets en groupe ou solo.
+links:
+  - type: http
+    text: Retrouvez les conventions de nommage de commits sur conventionalcommits.org
+    link: https://www.conventionalcommits.org/en/v1.0.0/
+slides:
+  link: https://slides.atilla.org/training-git-2025.html
