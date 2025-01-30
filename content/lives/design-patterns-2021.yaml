@@ -9,6 +9,11 @@ authors:
   - danguilhen
   - kassemmost
 description: Live de design patterns de l'année scolaire 2021-2022
+links:
+  - type: http
+    text: Slides de la présentation
+    link: https://slides.atilla.org/live-design-pattern-2021.pdf
+    source: ATILLA
 keywords:
   - formation: ing2
   - cursus: genie-informatique
