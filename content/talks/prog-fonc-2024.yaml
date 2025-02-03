@@ -1,0 +1,15 @@
+type: talk
+title: Programmation fonctionnelle
+date: 28/11/2024
+image: talk-prog-fonc-2024.jpg
+short: Introduction à la programmation fonctionnelle (Scala)
+peertube_id:
+  - e24f03cd-4d70-4cdd-9717-fa8d427034e0
+authors:
+  - fromentinr
+description: Introduction à la programmation fonctionnelle avec le langage Scala
+links:
+  - type: http
+    text: Exemple illustrant les notions présentés
+    link: https://gitlab.atilla.org/raphael.fromentin1/formation-fp-2024-exemple
+    author: Raphaël Fromentin
