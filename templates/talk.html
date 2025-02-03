@@ -21,11 +21,13 @@
     </div>
     {% endif %}
     {% if entry.peertube_id %}
+    {% for peertube in entry.peertube_id %}
     <div class="card-panel">
       <div class="video-container center">
-        <iframe width="1280" height="720" src="https://peertube.atilla.org/videos/embed/{{ entry.peertube_id }}" frameborder="0" allowfullscreen></iframe>
+        <iframe width="1280" height="720" src="https://peertube.atilla.org/videos/embed/{{ entry.peertube_id[loop.index0] }}" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
+    {% endfor %}
     {% endif %}
     <div class="row">
       <div class="col l7 s12">
