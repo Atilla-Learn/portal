@@ -12,4 +12,5 @@ links:
   - type: http
     text: Exemple illustrant les notions présentés
     link: https://gitlab.atilla.org/raphael.fromentin1/formation-fp-2024-exemple
+    source: Github
     author: Raphaël Fromentin
