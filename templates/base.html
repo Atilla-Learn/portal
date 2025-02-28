@@ -24,16 +24,16 @@
     <meta name="description" content="{% block description %}Learn est la plateforme d'apprentissage d'ATILLA. Retrouvez nos talks, formations et conférences.{% endblock %}">
 
     <!-- Piwik / matomo -->
-    <script type="text/javascript">
-      var _paq = _paq || [];
+    <script>
+      var _paq = window._paq = window._paq || [];
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
       (function() {
         var u="https://analytics.atilla.org/";
-        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
         _paq.push(['setSiteId', '2']);
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
       })();
     </script>
     <noscript><p><img src="https://analytics.atilla.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /></p></noscript>
