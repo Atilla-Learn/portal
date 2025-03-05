@@ -4,7 +4,9 @@ before_script:
   - id
   - pwd
   - apk update
-  - apk add --no-cache python3 py3-pip py3-virtualenv git
+  - apk add --no-cache python3 py3-pip py3-virtualenv git tzdata
+  - cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+  - echo "Europe/Paris" > /etc/timezone
 
 stages:
   - build
