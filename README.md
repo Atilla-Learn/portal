@@ -2,6 +2,8 @@
 
 Python-generated static website, with `materialize.css` design.
 
+Original repository on https://gitlab.atilla.org/atilla/learn-portal, mirror on https://github.com/Atilla-Learn/portal
+
 # How to get a working instance
 
 * Clone the repo
