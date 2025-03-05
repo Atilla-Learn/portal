@@ -1,9 +1,10 @@
-image: python:3.10
+image: node:20-alpine
 
 before_script:
   - id
   - pwd
-  - apt update && apt install -y nodejs npm
+  - apk update
+  - apk add --no-cache python3 py3-pip py3-virtualenv git
 
 stages:
   - build
@@ -31,6 +32,8 @@ deploy:prod:
     url: https://learn.atilla.org
   only:
     - master
+  before_script:
+    - apk add --no-cache openssh-client rsync
   script:
     - eval $(ssh-agent -s)
     - echo "$SSH_PRODUCTION_PRIVATE_KEY" | ssh-add -
