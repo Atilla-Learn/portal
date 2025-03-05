@@ -35,7 +35,7 @@ class AtillaLearn:
 
         # Common stuff
         self.common_dict = {
-            'gen_time': datetime.datetime.now(),
+            'gen_time': datetime.datetime.fromtimestamp(time.time()).strftime("%d/%m/%Y à %H:%M"), # get local hour from system (for time zone)
             'git_sha1': subprocess.check_output(
                 ['git', 'rev-parse', 'HEAD'],
                 universal_newlines=True
