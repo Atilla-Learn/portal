@@ -4,7 +4,9 @@ before_script:
   - id
   - pwd
   - apk update
-  - apk add --no-cache python3 py3-pip py3-virtualenv git
+  - apk add --no-cache python3 py3-pip py3-virtualenv git tzdata
+  - cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+  - echo "Europe/Paris" > /etc/timezone
 
 stages:
   - build
@@ -20,8 +22,6 @@ build:app:
     - python3 generate.py
     - npm install bower
     - npx bower install
-    - ls -lah web/
-    - ls -lah web/img/
   artifacts:
     paths:
       - web/
@@ -45,5 +45,4 @@ deploy:prod:
     - chmod 644 ~/.ssh/known_hosts
     - ls -lah web/
     - ls -lah web/vendor/
-    - ls -lah web/img/
     - rsync --checksum --recursive --delete --delete-during --itemize-changes --verbose web/ learn@webstatic-prod.prod.infra.atilla.org:/srv/vhosts/learn/website
