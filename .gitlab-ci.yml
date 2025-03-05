@@ -1,6 +1,9 @@
+image: python:3.10
+
 before_script:
   - id
   - pwd
+  - apt update && apt install -y nodejs npm
 
 stages:
   - build
@@ -9,13 +12,12 @@ stages:
 build:app:
   stage: build
   script:
-    - if [ ! -e venv/bin/activate ] ; then virtualenv -p $(which python3) venv; fi
+    - if [ ! -e venv/bin/activate ] ; then python3 -m venv venv; fi
     - source venv/bin/activate
     - pip install --upgrade pip
     - pip install -r requirements.txt
+    - python3 generate.py
     - npm install bower
-    - python generate.py
-    - node_modules/bower/bin/bower install
   artifacts:
     paths:
       - web/
@@ -31,5 +33,8 @@ deploy:prod:
     - master
   script:
     - eval $(ssh-agent -s)
-    - ssh-add <(echo "$SSH_PRODUCTION_PRIVATE_KEY")
-    - rsync --checksum --recursive --delete --delete-during --itemize-changes --verbose web/ learn@webstatic-prod.prod.infra.atilla.org:~/website
+    - echo "$SSH_PRODUCTION_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - ssh-keyscan -H webstatic-prod.prod.infra.atilla.org >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - rsync --checksum --recursive --delete --delete-during --itemize-changes --verbose web/ learn@webstatic-prod.prod.infra.atilla.org:/srv/vhosts/learn/website
