@@ -8,19 +8,15 @@ Original repository on https://gitlab.atilla.org/atilla/learn-portal, mirror on 
 
 * Clone the repo
 ```
-$ virtualenv -p `which python3` venv
-$ source venv/bin/activate
-$ pip install -r requirements.txt
-$ python3 generate.py
-$ bower install
+$ ./build.sh
 ```
 
 * Then to start a php server in order to see the website
 ```
 $ cd web
-$ php -S localhost:8000
+$ php -S localhost:8080
 ```
-And go localhost:8000 on a web navigator
+And go to [localhost:8080](http://localhost:8080) on a web navigator
 
 # Structure of the repo
 
@@ -71,6 +67,7 @@ And go localhost:8000 on a web navigator
     replay_id: a Youtube ID for the replay (or nothing if there's none)
     peertube_id : 
       - the ID of the Peertube video if there is one
+      - the ID of the Peertube video 2nd part if there is one
     authors:
       - author1
       - author2
@@ -82,8 +79,8 @@ And go localhost:8000 on a web navigator
         source: youtube, NASA, whatever
         author: you know the drill
     slides:
-      link: http://link_to_online_version_of_slides.com
-      git: http://link_to_source_of_slides.org
+      link: https://link_to_online_version_of_slides.com (can be on slides.atilla.org)
+      git: https://link_to_source_of_slides.org
     ```
 # How to add a live
 
@@ -108,8 +105,8 @@ And go localhost:8000 on a web navigator
     description: a full description
     keywords:
       - formation: ing1/ing2/ing3
-      - cursus: genie-informatique/genie-mathematiques/you know what I'm talking about
-      - category: informatique/mathematiques/other(you can be specific)
+      - cursus: genie-informatique/genie-mathematique/transverse/you know what I'm talking about
+      - category: informatique/mathematiques/economie/autres/(you can be specific)
       - another type of keyword if you feel the need to add it
     links:
       - type: video, or http, or book
@@ -118,8 +115,8 @@ And go localhost:8000 on a web navigator
         source: youtube, NASA, whatever
         author: you know the drill
     slides:
-      link: http://link_to_online_version_of_slides.com
-      git: http://link_to_source_of_slides.org
+      link: https://link_to_online_version_of_slides.com (can be on slides.atilla.org)
+      git: https://link_to_source_of_slides.org
     ```
 
 * Please keep in mind that you can add as many keywords as you want, but that
