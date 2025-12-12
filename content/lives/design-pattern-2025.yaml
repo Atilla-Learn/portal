@@ -1,0 +1,21 @@
+type: live
+title: Design Pattern 2025
+date: 11/12/2025
+image: live-design-pattern-2025.jpg
+short: Live de design pattern 2025-2026
+peertube_id:
+  - dda06328-5dac-411e-9709-140ed3a244ec
+authors:
+  - fromentinr
+description: Live de design pattern de l'année 2025-2026
+keywords:
+  - formation: ing2
+  - cursus: genie-informatique
+  - category: informatique
+links:
+  - type: http
+    text: refactoring.guru, ressource pour comprendre les design patterns
+    link: https://refactoring.guru/design-patterns/catalog
+  - type: http
+    text: Lien du code écrit pendant ce live + README donnant des explications plus approfondies et des idées d'exercices.
+    link: https://gitlab.atilla.org/raphael.fromentin1/live-design-pattern-2025
