@@ -1,4 +1,6 @@
-FROM python:alpine AS python-builder
+FROM python:slim AS python-builder
+
+RUN apt-get update && apt-get install -y --no-install-recommends git ca-certificates && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 COPY . .
@@ -9,27 +11,22 @@ RUN python3 generate.py
 
 # ----------------------
 
-FROM node:lts-alpine AS node-builder
+FROM node:lts-slim AS node-builder
+
+RUN apt-get update && apt-get install -y --no-install-recommends git ca-certificates && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 COPY --from=python-builder /app /app
 
-# Install bower
 RUN npm install -g bower
 
-# Install frontend deps
 RUN bower install --allow-root
 
 # ----------------------
 
 FROM nginx:alpine AS runtime
-
-# Remove default nginx html
 RUN rm -rf /usr/share/nginx/html/*
-
-# Copy generated static site
 COPY --from=node-builder /app/web /usr/share/nginx/html
 
 EXPOSE 80
-
 CMD ["nginx", "-g", "daemon off;"]
