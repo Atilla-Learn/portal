@@ -1,48 +1,71 @@
-image: node:20-alpine
-
-before_script:
-  - id
-  - pwd
-  - apk update
-  - apk add --no-cache python3 py3-pip py3-virtualenv git tzdata
-  - cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
-  - echo "Europe/Paris" > /etc/timezone
-
+# List of stages for jobs, and their order of execution
 stages:
   - build
-  - deploy
+  - publish
 
-build:app:
+# Default image for all jobs
+default:
+  tags:
+    - buildah
+  cache:
+    key: buildah-cache
+    paths:
+      - /var/lib/containers
+
+# Job building container image
+build-container-job:
   stage: build
   script:
-    - if [ ! -e venv/bin/activate ] ; then python3 -m venv venv; fi
-    - source venv/bin/activate
-    - pip install --upgrade pip
-    - pip install -r requirements.txt
-    - python3 generate.py
-    - npm install bower
-    - npx bower install
-  artifacts:
-    paths:
-      - web/
+    - echo "Building container image with Buildah..."
+    - buildah login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - buildah pull $CI_REGISTRY_IMAGE:latest || true
 
-deploy:prod:
-  stage: deploy
-  dependencies:
-    - build:app
-  environment:
-    name: production
-    url: https://learn.atilla.org
-  only:
-    - master
-  before_script:
-    - apk add --no-cache openssh-client rsync
+    # Build using full SHA
+    - buildah bud --build-arg BUILDKIT_INLINE_CACHE=1 --layers -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA .
+
+    # Tag with short SHA
+    - buildah tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+
+    # Push both tags
+    - buildah push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+    - buildah push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    - echo "Container image built."
+  rules:
+    - if: $CI_COMMIT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+# Job properly tagging the container in the registry
+publish-container-job:
+  stage: publish
+  needs:
+    - build-container-job
   script:
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRODUCTION_PRIVATE_KEY" | ssh-add -
-    - mkdir -p ~/.ssh
-    - ssh-keyscan -H webstatic-prod.prod.infra.atilla.org >> ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
-    - ls -lah web/
-    - ls -lah web/vendor/
-    - rsync --checksum --recursive --delete --delete-during --itemize-changes --verbose web/ learn@webstatic-prod.prod.infra.atilla.org:/srv/vhosts/learn/website
+    - echo "Publishing container image..."
+    - buildah login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - buildah pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+
+    # Determine branch/PR tag
+    - |
+      if [ -n "$CI_MERGE_REQUEST_IID" ]; then
+        IMAGE_TAG="pr-$CI_MERGE_REQUEST_IID"
+        echo "Merge request detected → tag: $IMAGE_TAG"
+      else
+        IMAGE_TAG=$(echo "$CI_COMMIT_BRANCH" | tr '/' '-')
+        echo "Branch detected → tag: $IMAGE_TAG"
+      fi
+
+    # Tag and push branch/PR tag
+    - buildah tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:$IMAGE_TAG
+    - buildah push $CI_REGISTRY_IMAGE:$IMAGE_TAG
+
+    # Tag and push latest if on main/master
+    - |
+      if [ "$CI_COMMIT_BRANCH" = "main" ] || [ "$CI_COMMIT_BRANCH" = "master" ]; then
+        buildah tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:latest
+        buildah push $CI_REGISTRY_IMAGE:latest
+      fi
+
+    - echo "Container image published."
+  rules:
+    - if: $CI_COMMIT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
