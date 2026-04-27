@@ -1,0 +1,18 @@
+type: live
+title: Programmation Fonctionnelle 2026
+date: 27/04/2026
+image: live-programmation-fonctionnelle-scala-2026.png
+short: Live de programmation fonctionnelle (scala) 2025-2026
+peertube_id:
+  - jmagjo8FVtiM15Bx8d7x8L
+authors:
+  - fromentinr
+description: Live de programmation fonctionnelle de l'année 2025-2026
+keywords:
+  - formation: ing2
+  - cursus: genie-informatique
+  - category: informatique
+links:
+  - type: http
+    text: Lien du code écrit pendant ce live.
+    link: https://gitlab.atilla.org/raphael.fromentin1/live-programmation-fonctionnelle-2026
